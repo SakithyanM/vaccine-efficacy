@@ -44,10 +44,6 @@ $$
 
 ![Dose number distribution](images/covariates/dose_number.png)
 
-### Co-administered vaccine distribution
-
-![Co-administered vaccine distribution](images/covariates/coadministered_vaccine.png)
-
 ### Notes
 
 - The charts are intended as a lightweight covariate gallery for exploratory analysis.
