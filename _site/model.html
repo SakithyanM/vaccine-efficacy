@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Vaccine Efficacy Dashboard</title>
+<title>Model – Vaccine Efficacy Dashboard</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,7 +26,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -70,12 +70,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -115,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Pages</a></li><li class="breadcrumb-item"><a href="./index.html">Vaccine Efficacy Dashboard</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Pages</a></li><li class="breadcrumb-item"><a href="./model.html">Model</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -138,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vaccine Efficacy Dashboard</span></a>
   </div>
 </li>
@@ -150,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./model.html" class="sidebar-item-text sidebar-link">
+  <a href="./model.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Model</span></a>
   </div>
 </li>
@@ -161,13 +164,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#model-summary" id="toc-model-summary" class="nav-link active" data-scroll-target="#model-summary">Model summary</a>
+  <ul class="collapse">
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Pages</a></li><li class="breadcrumb-item"><a href="./index.html">Vaccine Efficacy Dashboard</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Pages</a></li><li class="breadcrumb-item"><a href="./model.html">Model</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Vaccine Efficacy Dashboard</h1>
+<h1 class="title">Model</h1>
 </div>
 
 
@@ -184,129 +198,205 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This site now presents a small, data-backed snapshot of the vaccination records available in the repository.</p>
-<section id="verified-dataset-summary" class="level3">
-<h3 class="anchored" data-anchor-id="verified-dataset-summary">Verified dataset summary</h3>
-<table class="caption-top table">
+<section id="model-summary" class="level2">
+<h2 class="anchored" data-anchor-id="model-summary">Model summary</h2>
+<p>This section reports a simple regression-style summary using a symptom-free indicator as the response proxy and a small set of covariates from the vaccination and daily survey data.</p>
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-stderr">
+<pre><code>/opt/venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "</code></pre>
+</div>
+<div id="tbl-model-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-model-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary of model coefficients
+</figcaption>
+<div aria-describedby="tbl-model-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe cell caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
-<th>File</th>
-<th style="text-align: right;">Record count</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">estimate</th>
+<th data-quarto-table-cell-role="th">std.error</th>
+<th data-quarto-table-cell-role="th">statistic</th>
+<th data-quarto-table-cell-role="th">p.value</th>
+<th data-quarto-table-cell-role="th">conf.low</th>
+<th data-quarto-table-cell-role="th">conf.high</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>covid_enrollment.csv</code></td>
-<td style="text-align: right;">91,379</td>
+<th data-quarto-table-cell-role="th">const</th>
+<td>1.8192</td>
+<td>0.7649</td>
+<td>2.3784</td>
+<td>0.0174</td>
+<td>0.3200</td>
+<td>3.3183</td>
 </tr>
 <tr class="even">
-<td><code>covid_vaccination.csv</code></td>
-<td style="text-align: right;">91,216</td>
+<th data-quarto-table-cell-role="th">age_at_vax_yrs_05-11</th>
+<td>-1.3420</td>
+<td>1.0847</td>
+<td>-1.2372</td>
+<td>0.2160</td>
+<td>-3.4680</td>
+<td>0.7839</td>
 </tr>
 <tr class="odd">
-<td><code>covid_daily_survey.csv</code></td>
-<td style="text-align: right;">139,421</td>
+<th data-quarto-table-cell-role="th">age_at_vax_yrs_12-19</th>
+<td>-0.5798</td>
+<td>1.0172</td>
+<td>-0.5700</td>
+<td>0.5687</td>
+<td>-2.5734</td>
+<td>1.4138</td>
 </tr>
 <tr class="even">
-<td><code>covid_weekly_survey.csv</code></td>
-<td style="text-align: right;">220,416</td>
+<th data-quarto-table-cell-role="th">age_at_vax_yrs_20-29</th>
+<td>-1.1652</td>
+<td>0.7977</td>
+<td>-1.4607</td>
+<td>0.1441</td>
+<td>-2.7287</td>
+<td>0.3983</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">age_at_vax_yrs_30-39</th>
+<td>-0.7149</td>
+<td>0.7784</td>
+<td>-0.9185</td>
+<td>0.3584</td>
+<td>-2.2405</td>
+<td>0.8107</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">age_at_vax_yrs_40-49</th>
+<td>-0.7120</td>
+<td>0.7749</td>
+<td>-0.9189</td>
+<td>0.3582</td>
+<td>-2.2307</td>
+<td>0.8067</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">age_at_vax_yrs_50-59</th>
+<td>-0.4677</td>
+<td>0.7724</td>
+<td>-0.6055</td>
+<td>0.5448</td>
+<td>-1.9817</td>
+<td>1.0462</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">age_at_vax_yrs_60-69</th>
+<td>-0.4510</td>
+<td>0.7688</td>
+<td>-0.5867</td>
+<td>0.5574</td>
+<td>-1.9579</td>
+<td>1.0559</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">age_at_vax_yrs_70-79</th>
+<td>-0.1778</td>
+<td>0.7691</td>
+<td>-0.2312</td>
+<td>0.8171</td>
+<td>-1.6853</td>
+<td>1.3296</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">age_at_vax_yrs_80+</th>
+<td>0.3431</td>
+<td>0.7935</td>
+<td>0.4323</td>
+<td>0.6655</td>
+<td>-1.2121</td>
+<td>1.8982</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">DOSE_NUMBER_Fourth</th>
+<td>17.4465</td>
+<td>11149.4482</td>
+<td>0.0016</td>
+<td>0.9988</td>
+<td>-21835.0703</td>
+<td>21869.9634</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">DOSE_NUMBER_Second</th>
+<td>0.0469</td>
+<td>0.0860</td>
+<td>0.5450</td>
+<td>0.5858</td>
+<td>-0.1217</td>
+<td>0.2154</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">DOSE_NUMBER_Third</th>
+<td>-0.1937</td>
+<td>0.2339</td>
+<td>-0.8282</td>
+<td>0.4075</td>
+<td>-0.6521</td>
+<td>0.2647</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">CURRENT_STATE_Fair</th>
+<td>-0.8850</td>
+<td>0.1476</td>
+<td>-5.9962</td>
+<td>0.0000</td>
+<td>-1.1743</td>
+<td>-0.5958</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">CURRENT_STATE_Good</th>
+<td>-0.6409</td>
+<td>0.0975</td>
+<td>-6.5714</td>
+<td>0.0000</td>
+<td>-0.8320</td>
+<td>-0.4497</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">CURRENT_STATE_Poor</th>
+<td>-1.6117</td>
+<td>0.3847</td>
+<td>-4.1899</td>
+<td>0.0000</td>
+<td>-2.3657</td>
+<td>-0.8578</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">CURRENT_STATE_Very good</th>
+<td>-0.4496</td>
+<td>0.0884</td>
+<td>-5.0836</td>
+<td>0.0000</td>
+<td>-0.6230</td>
+<td>-0.2763</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="most-common-vaccine-manufacturers" class="level3">
-<h3 class="anchored" data-anchor-id="most-common-vaccine-manufacturers">Most common vaccine manufacturers</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Manufacturer</th>
-<th style="text-align: right;">Record count</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Pfizer-BioNTech</td>
-<td style="text-align: right;">43,480</td>
-</tr>
-<tr class="even">
-<td>Moderna</td>
-<td style="text-align: right;">37,599</td>
-</tr>
-<tr class="odd">
-<td>Do not know/cannot recall</td>
-<td style="text-align: right;">7,746</td>
-</tr>
-<tr class="even">
-<td>Novavax</td>
-<td style="text-align: right;">2,554</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="dose-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="dose-distribution">Dose distribution</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Dose number</th>
-<th style="text-align: right;">Record count</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>First</td>
-<td style="text-align: right;">81,832</td>
-</tr>
-<tr class="even">
-<td>Second</td>
-<td style="text-align: right;">8,781</td>
-</tr>
-<tr class="odd">
-<td>Third</td>
-<td style="text-align: right;">590</td>
-</tr>
-<tr class="even">
-<td>Fourth</td>
-<td style="text-align: right;">11</td>
-</tr>
-<tr class="odd">
-<td>Fifth</td>
-<td style="text-align: right;">2</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="charts" class="level3">
-<h3 class="anchored" data-anchor-id="charts">Charts</h3>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/monthly_enrollment.png" class="img-fluid figure-img"></p>
-<figcaption>Monthly enrollment counts</figcaption>
+
+</div>
+</div>
+</div>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/manufacturer_share.png" class="img-fluid figure-img"></p>
-<figcaption>Manufacturer distribution</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="trend-summary" class="level3">
-<h3 class="anchored" data-anchor-id="trend-summary">Trend summary</h3>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
 <ul>
-<li>Enrollment activity is concentrated in a handful of months rather than distributed evenly across the whole period.</li>
-<li>Pfizer-BioNTech and Moderna dominate the manufacturer mix in the submitted enrollment records.</li>
-<li>Most vaccination entries are tied to first or second doses, which suggests a strong early-series reporting pattern in the data.</li>
+<li>The table presents estimated coefficients and uncertainty for a simple covariate-based model.</li>
+<li>The response variable is a symptom-free indicator, used here as a proxy for short-run vaccine outcomes.</li>
+<li>These estimates are exploratory and intended to show how the observed dataset could be summarized in a model-oriented format.</li>
 </ul>
 
 

@@ -1,27 +1,41 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Vaccine Efficacy Dashboard",
+    "objectID": "model.html",
+    "href": "model.html",
+    "title": "Model",
     "section": "",
-    "text": "This site now presents a small, data-backed snapshot of the vaccination records available in the repository.\n\n\n\n\n\nFile\nRecord count\n\n\n\n\ncovid_enrollment.csv\n91,379\n\n\ncovid_vaccination.csv\n91,216\n\n\ncovid_daily_survey.csv\n139,421\n\n\ncovid_weekly_survey.csv\n220,416\n\n\n\n\n\n\n\n\n\nManufacturer\nRecord count\n\n\n\n\nPfizer-BioNTech\n43,480\n\n\nModerna\n37,599\n\n\nDo not know/cannot recall\n7,746\n\n\nNovavax\n2,554\n\n\n\n\n\n\n\n\n\nDose number\nRecord count\n\n\n\n\nFirst\n81,832\n\n\nSecond\n8,781\n\n\nThird\n590\n\n\nFourth\n11\n\n\nFifth\n2\n\n\n\n\n\n\n\n\n\n\n\n\nMonthly enrollment counts\n\n\n\n\n\n\n\nManufacturer distribution\n\n\n\n\n\n\n\n\n\nEnrollment activity is concentrated in a handful of months rather than distributed evenly across the whole period.\nPfizer-BioNTech and Moderna dominate the manufacturer mix in the submitted enrollment records.\nMost vaccination entries are tied to first or second doses, which suggests a strong early-series reporting pattern in the data.",
+    "text": "This section reports a simple regression-style summary using a symptom-free indicator as the response proxy and a small set of covariates from the vaccination and daily survey data.\n\n\n/opt/venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals\n  warnings.warn(\"Maximum Likelihood optimization failed to \"\n\n\n\n\nTable 1: Summary of model coefficients\n\n\n\n\n\n\n\n\n\n\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\nconst\n1.8192\n0.7649\n2.3784\n0.0174\n0.3200\n3.3183\n\n\nage_at_vax_yrs_05-11\n-1.3420\n1.0847\n-1.2372\n0.2160\n-3.4680\n0.7839\n\n\nage_at_vax_yrs_12-19\n-0.5798\n1.0172\n-0.5700\n0.5687\n-2.5734\n1.4138\n\n\nage_at_vax_yrs_20-29\n-1.1652\n0.7977\n-1.4607\n0.1441\n-2.7287\n0.3983\n\n\nage_at_vax_yrs_30-39\n-0.7149\n0.7784\n-0.9185\n0.3584\n-2.2405\n0.8107\n\n\nage_at_vax_yrs_40-49\n-0.7120\n0.7749\n-0.9189\n0.3582\n-2.2307\n0.8067\n\n\nage_at_vax_yrs_50-59\n-0.4677\n0.7724\n-0.6055\n0.5448\n-1.9817\n1.0462\n\n\nage_at_vax_yrs_60-69\n-0.4510\n0.7688\n-0.5867\n0.5574\n-1.9579\n1.0559\n\n\nage_at_vax_yrs_70-79\n-0.1778\n0.7691\n-0.2312\n0.8171\n-1.6853\n1.3296\n\n\nage_at_vax_yrs_80+\n0.3431\n0.7935\n0.4323\n0.6655\n-1.2121\n1.8982\n\n\nDOSE_NUMBER_Fourth\n17.4465\n11149.4482\n0.0016\n0.9988\n-21835.0703\n21869.9634\n\n\nDOSE_NUMBER_Second\n0.0469\n0.0860\n0.5450\n0.5858\n-0.1217\n0.2154\n\n\nDOSE_NUMBER_Third\n-0.1937\n0.2339\n-0.8282\n0.4075\n-0.6521\n0.2647\n\n\nCURRENT_STATE_Fair\n-0.8850\n0.1476\n-5.9962\n0.0000\n-1.1743\n-0.5958\n\n\nCURRENT_STATE_Good\n-0.6409\n0.0975\n-6.5714\n0.0000\n-0.8320\n-0.4497\n\n\nCURRENT_STATE_Poor\n-1.6117\n0.3847\n-4.1899\n0.0000\n-2.3657\n-0.8578\n\n\nCURRENT_STATE_Very good\n-0.4496\n0.0884\n-5.0836\n0.0000\n-0.6230\n-0.2763\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe table presents estimated coefficients and uncertainty for a simple covariate-based model.\nThe response variable is a symptom-free indicator, used here as a proxy for short-run vaccine outcomes.\nThese estimates are exploratory and intended to show how the observed dataset could be summarized in a model-oriented format.",
     "crumbs": [
       "Home",
       "Pages",
-      "Vaccine Efficacy Dashboard"
+      "Model"
     ]
   },
   {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "Vaccine Efficacy Dashboard",
+    "objectID": "model.html#model-summary",
+    "href": "model.html#model-summary",
+    "title": "Model",
     "section": "",
-    "text": "This site now presents a small, data-backed snapshot of the vaccination records available in the repository.\n\n\n\n\n\nFile\nRecord count\n\n\n\n\ncovid_enrollment.csv\n91,379\n\n\ncovid_vaccination.csv\n91,216\n\n\ncovid_daily_survey.csv\n139,421\n\n\ncovid_weekly_survey.csv\n220,416\n\n\n\n\n\n\n\n\n\nManufacturer\nRecord count\n\n\n\n\nPfizer-BioNTech\n43,480\n\n\nModerna\n37,599\n\n\nDo not know/cannot recall\n7,746\n\n\nNovavax\n2,554\n\n\n\n\n\n\n\n\n\nDose number\nRecord count\n\n\n\n\nFirst\n81,832\n\n\nSecond\n8,781\n\n\nThird\n590\n\n\nFourth\n11\n\n\nFifth\n2\n\n\n\n\n\n\n\n\n\n\n\n\nMonthly enrollment counts\n\n\n\n\n\n\n\nManufacturer distribution\n\n\n\n\n\n\n\n\n\nEnrollment activity is concentrated in a handful of months rather than distributed evenly across the whole period.\nPfizer-BioNTech and Moderna dominate the manufacturer mix in the submitted enrollment records.\nMost vaccination entries are tied to first or second doses, which suggests a strong early-series reporting pattern in the data.",
+    "text": "This section reports a simple regression-style summary using a symptom-free indicator as the response proxy and a small set of covariates from the vaccination and daily survey data.\n\n\n/opt/venv/lib/python3.12/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals\n  warnings.warn(\"Maximum Likelihood optimization failed to \"\n\n\n\n\nTable 1: Summary of model coefficients\n\n\n\n\n\n\n\n\n\n\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\nconst\n1.8192\n0.7649\n2.3784\n0.0174\n0.3200\n3.3183\n\n\nage_at_vax_yrs_05-11\n-1.3420\n1.0847\n-1.2372\n0.2160\n-3.4680\n0.7839\n\n\nage_at_vax_yrs_12-19\n-0.5798\n1.0172\n-0.5700\n0.5687\n-2.5734\n1.4138\n\n\nage_at_vax_yrs_20-29\n-1.1652\n0.7977\n-1.4607\n0.1441\n-2.7287\n0.3983\n\n\nage_at_vax_yrs_30-39\n-0.7149\n0.7784\n-0.9185\n0.3584\n-2.2405\n0.8107\n\n\nage_at_vax_yrs_40-49\n-0.7120\n0.7749\n-0.9189\n0.3582\n-2.2307\n0.8067\n\n\nage_at_vax_yrs_50-59\n-0.4677\n0.7724\n-0.6055\n0.5448\n-1.9817\n1.0462\n\n\nage_at_vax_yrs_60-69\n-0.4510\n0.7688\n-0.5867\n0.5574\n-1.9579\n1.0559\n\n\nage_at_vax_yrs_70-79\n-0.1778\n0.7691\n-0.2312\n0.8171\n-1.6853\n1.3296\n\n\nage_at_vax_yrs_80+\n0.3431\n0.7935\n0.4323\n0.6655\n-1.2121\n1.8982\n\n\nDOSE_NUMBER_Fourth\n17.4465\n11149.4482\n0.0016\n0.9988\n-21835.0703\n21869.9634\n\n\nDOSE_NUMBER_Second\n0.0469\n0.0860\n0.5450\n0.5858\n-0.1217\n0.2154\n\n\nDOSE_NUMBER_Third\n-0.1937\n0.2339\n-0.8282\n0.4075\n-0.6521\n0.2647\n\n\nCURRENT_STATE_Fair\n-0.8850\n0.1476\n-5.9962\n0.0000\n-1.1743\n-0.5958\n\n\nCURRENT_STATE_Good\n-0.6409\n0.0975\n-6.5714\n0.0000\n-0.8320\n-0.4497\n\n\nCURRENT_STATE_Poor\n-1.6117\n0.3847\n-4.1899\n0.0000\n-2.3657\n-0.8578\n\n\nCURRENT_STATE_Very good\n-0.4496\n0.0884\n-5.0836\n0.0000\n-0.6230\n-0.2763\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe table presents estimated coefficients and uncertainty for a simple covariate-based model.\nThe response variable is a symptom-free indicator, used here as a proxy for short-run vaccine outcomes.\nThese estimates are exploratory and intended to show how the observed dataset could be summarized in a model-oriented format.",
     "crumbs": [
       "Home",
       "Pages",
-      "Vaccine Efficacy Dashboard"
+      "Model"
     ]
+  },
+  {
+    "objectID": "graphs.html",
+    "href": "graphs.html",
+    "title": "Graphs",
+    "section": "",
+    "text": "This section contains a small gallery of charts derived from the vaccination and enrollment CSV files. Each image highlights a major covariate in the dataset.\n\n\n\n\n\nManufacturer distribution\n\n\n\n\n\n\n\n\nAge group distribution\n\n\n\n\n\n\n\n\nCurrent health state distribution\n\n\n\n\n\n\n\n\nImmunocompromised status distribution\n\n\n\n\n\n\n\n\nDoctors seen distribution\n\n\n\n\n\n\n\n\nHospitalization distribution\n\n\n\n\n\n\n\n\nDose number distribution\n\n\n\n\n\n\nThe charts are intended as a lightweight covariate gallery for exploratory analysis.\nFurther work could add trend lines, statistical summaries, or more advanced subgroup comparisons."
+  },
+  {
+    "objectID": "graphs.html#covariate-graphs",
+    "href": "graphs.html#covariate-graphs",
+    "title": "Graphs",
+    "section": "",
+    "text": "This section contains a small gallery of charts derived from the vaccination and enrollment CSV files. Each image highlights a major covariate in the dataset.\n\n\n\n\n\nManufacturer distribution\n\n\n\n\n\n\n\n\nAge group distribution\n\n\n\n\n\n\n\n\nCurrent health state distribution\n\n\n\n\n\n\n\n\nImmunocompromised status distribution\n\n\n\n\n\n\n\n\nDoctors seen distribution\n\n\n\n\n\n\n\n\nHospitalization distribution\n\n\n\n\n\n\n\n\nDose number distribution\n\n\n\n\n\n\nThe charts are intended as a lightweight covariate gallery for exploratory analysis.\nFurther work could add trend lines, statistical summaries, or more advanced subgroup comparisons."
   },
   {
     "objectID": "data.html",
@@ -60,27 +74,27 @@
     ]
   },
   {
-    "objectID": "graphs.html",
-    "href": "graphs.html",
-    "title": "Graphs",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Vaccine Efficacy Dashboard",
     "section": "",
-    "text": "This graph shows a simple efficacy proxy, estimated from the share of participants reporting no symptoms in the daily survey after vaccination, grouped by age band.\n\n\n\\[\nE(age) = 100 \\times P(\\text{symptom-free} \\mid age)\n\\]\n\n\n\nAge-based vaccine efficacy proxy\n\n\n\n\n\n\nThe chart uses a symptom-free rate proxy as a practical estimate of vaccine efficacy by age group.\nLower symptom-free shares in younger adult groups suggest a weaker protective signal in this simplified proxy.\nThe graph is intended as a starting point for further age-stratified analysis.",
+    "text": "This site now presents a small, data-backed snapshot of the vaccination records available in the repository.\n\n\n\n\n\nFile\nRecord count\n\n\n\n\ncovid_enrollment.csv\n91,379\n\n\ncovid_vaccination.csv\n91,216\n\n\ncovid_daily_survey.csv\n139,421\n\n\ncovid_weekly_survey.csv\n220,416\n\n\n\n\n\n\n\n\n\nManufacturer\nRecord count\n\n\n\n\nPfizer-BioNTech\n43,480\n\n\nModerna\n37,599\n\n\nDo not know/cannot recall\n7,746\n\n\nNovavax\n2,554\n\n\n\n\n\n\n\n\n\nDose number\nRecord count\n\n\n\n\nFirst\n81,832\n\n\nSecond\n8,781\n\n\nThird\n590\n\n\nFourth\n11\n\n\nFifth\n2\n\n\n\n\n\n\n\n\n\n\n\n\nMonthly enrollment counts\n\n\n\n\n\n\n\nManufacturer distribution\n\n\n\n\n\n\n\n\n\nEnrollment activity is concentrated in a handful of months rather than distributed evenly across the whole period.\nPfizer-BioNTech and Moderna dominate the manufacturer mix in the submitted enrollment records.\nMost vaccination entries are tied to first or second doses, which suggests a strong early-series reporting pattern in the data.",
     "crumbs": [
       "Home",
       "Pages",
-      "Graphs"
+      "Vaccine Efficacy Dashboard"
     ]
   },
   {
-    "objectID": "graphs.html#age-based-vaccine-efficacy",
-    "href": "graphs.html#age-based-vaccine-efficacy",
-    "title": "Graphs",
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Vaccine Efficacy Dashboard",
     "section": "",
-    "text": "This graph shows a simple efficacy proxy, estimated from the share of participants reporting no symptoms in the daily survey after vaccination, grouped by age band.\n\n\n\\[\nE(age) = 100 \\times P(\\text{symptom-free} \\mid age)\n\\]\n\n\n\nAge-based vaccine efficacy proxy\n\n\n\n\n\n\nThe chart uses a symptom-free rate proxy as a practical estimate of vaccine efficacy by age group.\nLower symptom-free shares in younger adult groups suggest a weaker protective signal in this simplified proxy.\nThe graph is intended as a starting point for further age-stratified analysis.",
+    "text": "This site now presents a small, data-backed snapshot of the vaccination records available in the repository.\n\n\n\n\n\nFile\nRecord count\n\n\n\n\ncovid_enrollment.csv\n91,379\n\n\ncovid_vaccination.csv\n91,216\n\n\ncovid_daily_survey.csv\n139,421\n\n\ncovid_weekly_survey.csv\n220,416\n\n\n\n\n\n\n\n\n\nManufacturer\nRecord count\n\n\n\n\nPfizer-BioNTech\n43,480\n\n\nModerna\n37,599\n\n\nDo not know/cannot recall\n7,746\n\n\nNovavax\n2,554\n\n\n\n\n\n\n\n\n\nDose number\nRecord count\n\n\n\n\nFirst\n81,832\n\n\nSecond\n8,781\n\n\nThird\n590\n\n\nFourth\n11\n\n\nFifth\n2\n\n\n\n\n\n\n\n\n\n\n\n\nMonthly enrollment counts\n\n\n\n\n\n\n\nManufacturer distribution\n\n\n\n\n\n\n\n\n\nEnrollment activity is concentrated in a handful of months rather than distributed evenly across the whole period.\nPfizer-BioNTech and Moderna dominate the manufacturer mix in the submitted enrollment records.\nMost vaccination entries are tied to first or second doses, which suggests a strong early-series reporting pattern in the data.",
     "crumbs": [
       "Home",
       "Pages",
-      "Graphs"
+      "Vaccine Efficacy Dashboard"
     ]
   }
 ]

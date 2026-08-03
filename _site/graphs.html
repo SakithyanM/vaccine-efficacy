@@ -71,35 +71,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -130,8 +101,8 @@ window.Quarto = {
 <span class="menu-text">Data Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./graphs.html"> 
-<span class="menu-text">Graphs</span></a>
+    <a class="nav-link" href="./model.html"> 
+<span class="menu-text">Model</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -144,7 +115,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Pages</a></li><li class="breadcrumb-item"><a href="./graphs.html">Graphs</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Graphs</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -179,8 +150,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./graphs.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Graphs</span></a>
+  <a href="./model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model</span></a>
   </div>
 </li>
       </ul>
@@ -195,9 +166,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#age-based-vaccine-efficacy" id="toc-age-based-vaccine-efficacy" class="nav-link active" data-scroll-target="#age-based-vaccine-efficacy">Age-based vaccine efficacy</a>
+  <li><a href="#covariate-graphs" id="toc-covariate-graphs" class="nav-link active" data-scroll-target="#covariate-graphs">Covariate graphs</a>
   <ul class="collapse">
-  <li><a href="#equation-shown-on-the-graph" id="toc-equation-shown-on-the-graph" class="nav-link" data-scroll-target="#equation-shown-on-the-graph">Equation shown on the graph</a></li>
+  <li><a href="#manufacturer-distribution" id="toc-manufacturer-distribution" class="nav-link" data-scroll-target="#manufacturer-distribution">Manufacturer distribution</a></li>
+  <li><a href="#age-group-distribution" id="toc-age-group-distribution" class="nav-link" data-scroll-target="#age-group-distribution">Age group distribution</a></li>
+  <li><a href="#current-health-state-distribution" id="toc-current-health-state-distribution" class="nav-link" data-scroll-target="#current-health-state-distribution">Current health state distribution</a></li>
+  <li><a href="#immunocompromised-status-distribution" id="toc-immunocompromised-status-distribution" class="nav-link" data-scroll-target="#immunocompromised-status-distribution">Immunocompromised status distribution</a></li>
+  <li><a href="#doctors-seen-distribution" id="toc-doctors-seen-distribution" class="nav-link" data-scroll-target="#doctors-seen-distribution">Doctors seen distribution</a></li>
+  <li><a href="#hospitalization-distribution" id="toc-hospitalization-distribution" class="nav-link" data-scroll-target="#hospitalization-distribution">Hospitalization distribution</a></li>
+  <li><a href="#dose-number-distribution" id="toc-dose-number-distribution" class="nav-link" data-scroll-target="#dose-number-distribution">Dose number distribution</a></li>
   <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
   </ul></li>
   </ul>
@@ -206,7 +183,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Pages</a></li><li class="breadcrumb-item"><a href="./graphs.html">Graphs</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Graphs</h1>
 </div>
@@ -225,27 +202,77 @@ window.Quarto = {
 </header>
 
 
-<section id="age-based-vaccine-efficacy" class="level2">
-<h2 class="anchored" data-anchor-id="age-based-vaccine-efficacy">Age-based vaccine efficacy</h2>
-<p>This graph shows a simple efficacy proxy, estimated from the share of participants reporting no symptoms in the daily survey after vaccination, grouped by age band.</p>
-<section id="equation-shown-on-the-graph" class="level3">
-<h3 class="anchored" data-anchor-id="equation-shown-on-the-graph">Equation shown on the graph</h3>
-<p><span class="math display">\[
-E(age) = 100 \times P(\text{symptom-free} \mid age)
-\]</span></p>
+<section id="covariate-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="covariate-graphs">Covariate graphs</h2>
+<p>This section contains a small gallery of charts derived from the vaccination and enrollment CSV files. Each image highlights a major covariate in the dataset.</p>
+<section id="manufacturer-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="manufacturer-distribution">Manufacturer distribution</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/age_efficacy.png" class="img-fluid figure-img"></p>
-<figcaption>Age-based vaccine efficacy proxy</figcaption>
+<p><img src="images/covariates/manufacturer.png" class="img-fluid figure-img"></p>
+<figcaption>Manufacturer distribution</figcaption>
+</figure>
+</div>
+</section>
+<section id="age-group-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="age-group-distribution">Age group distribution</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/covariates/age_group.png" class="img-fluid figure-img"></p>
+<figcaption>Age group distribution</figcaption>
+</figure>
+</div>
+</section>
+<section id="current-health-state-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="current-health-state-distribution">Current health state distribution</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/covariates/current_state.png" class="img-fluid figure-img"></p>
+<figcaption>Current health state distribution</figcaption>
+</figure>
+</div>
+</section>
+<section id="immunocompromised-status-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="immunocompromised-status-distribution">Immunocompromised status distribution</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/covariates/immunocompromised.png" class="img-fluid figure-img"></p>
+<figcaption>Immunocompromised status distribution</figcaption>
+</figure>
+</div>
+</section>
+<section id="doctors-seen-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="doctors-seen-distribution">Doctors seen distribution</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/covariates/seen_doctor.png" class="img-fluid figure-img"></p>
+<figcaption>Doctors seen distribution</figcaption>
+</figure>
+</div>
+</section>
+<section id="hospitalization-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="hospitalization-distribution">Hospitalization distribution</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/covariates/hospitalized.png" class="img-fluid figure-img"></p>
+<figcaption>Hospitalization distribution</figcaption>
+</figure>
+</div>
+</section>
+<section id="dose-number-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="dose-number-distribution">Dose number distribution</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/covariates/dose_number.png" class="img-fluid figure-img"></p>
+<figcaption>Dose number distribution</figcaption>
 </figure>
 </div>
 </section>
 <section id="notes" class="level3">
 <h3 class="anchored" data-anchor-id="notes">Notes</h3>
 <ul>
-<li>The chart uses a symptom-free rate proxy as a practical estimate of vaccine efficacy by age group.</li>
-<li>Lower symptom-free shares in younger adult groups suggest a weaker protective signal in this simplified proxy.</li>
-<li>The graph is intended as a starting point for further age-stratified analysis.</li>
+<li>The charts are intended as a lightweight covariate gallery for exploratory analysis.</li>
+<li>Further work could add trend lines, statistical summaries, or more advanced subgroup comparisons.</li>
 </ul>
 
 
