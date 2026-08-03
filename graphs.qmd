@@ -1,0 +1,21 @@
+---
+title: "Graphs"
+---
+
+## Age-based vaccine efficacy
+
+This graph shows a simple efficacy proxy, estimated from the share of participants reporting no symptoms in the daily survey after vaccination, grouped by age band.
+
+### Equation shown on the graph
+
+$$
+E(age) = 100 \times P(\text{symptom-free} \mid age)
+$$
+
+![Age-based vaccine efficacy proxy](images/age_efficacy.png)
+
+### Notes
+
+- The chart uses a symptom-free rate proxy as a practical estimate of vaccine efficacy by age group.
+- Lower symptom-free shares in younger adult groups suggest a weaker protective signal in this simplified proxy.
+- The graph is intended as a starting point for further age-stratified analysis.
