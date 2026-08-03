@@ -19,46 +19,11 @@ The data shows a sharp spike in enrollment during early 2024 and again toward la
 
 ### Enrollment trend chart
 
-```{python}
-#| label: fig-enrollment-trend
-#| fig-cap: "Monthly enrollment trend"
-import pandas as pd
-import matplotlib.pyplot as plt
-
-enrollment = pd.read_csv("covid_enrollment.csv", low_memory=False)
-enrollment["ENROLLED_DATE"] = pd.to_datetime(enrollment["ENROLLED_DATE"], errors="coerce")
-monthly = enrollment.groupby(enrollment["ENROLLED_DATE"].dt.to_period("M")).size().sort_index()
-
-plt.figure(figsize=(8, 4.5))
-plt.bar(monthly.index.astype(str), monthly.values, color="#4c78a8")
-plt.title("Monthly enrollment trend")
-plt.xlabel("Month")
-plt.ylabel("Enrollment count")
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.show()
-```
+![Monthly enrollment trend](images/monthly_enrollment.png)
 
 ### Dose distribution chart
 
-```{python}
-#| label: fig-dose-distribution
-#| fig-cap: "Distribution of vaccination dose numbers"
-import pandas as pd
-import matplotlib.pyplot as plt
-
-vaccination = pd.read_csv("covid_vaccination.csv", low_memory=False)
-dose_counts = vaccination["DOSE_NUMBER"].value_counts().sort_index()
-
-plt.figure(figsize=(7, 4.5))
-plt.bar(dose_counts.index.astype(str), dose_counts.values, color="#5a9e6f")
-plt.title("Dose number distribution")
-plt.xlabel("Dose number")
-plt.ylabel("Record count")
-plt.xticks(rotation=0)
-plt.tight_layout()
-plt.show()
-```
+![Dose number distribution](images/dose_distribution.png)
 
 ### Summary table
 
