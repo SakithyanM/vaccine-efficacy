@@ -1,0 +1,83 @@
+VSAFE_SYSTEM_ID,COMPLETED_ON_DATE,COMPLETED_ON_TIME,UPDATED_DATE,UPDATED_TIME,UPDATED,DURATION,LANGUAGE,SURVEY,SURVEY_VERSION,DAYS_SINCE,DOSE_NUMBER,RECORD_ID,COVID_VACCINE_HISTORY,COVID_VACCINE_DOSES,COVID_VACCINE,VACCINATION_DATE,COADMINISTERED,COADMINISTERED_VACCINE,COADMINISTERED_VACCINE_FLU,COADMINISTERED_VACCINE_RSV,COADMINISTERED_VACCINE_OTHER,IMMUNOCOMPROMISED,CURRENT_STATE,SEEN_DOCTOR,SEEN_DOCTOR_YEARS,HOSPITALIZED,age_at_vax_yrs
+0013d00000DxfQNAAZ,01/25/2024,16:07:39,,,No,40,English,COVID-19 Vaccination,1,127,First,1706216815738,Yes,,Moderna,12/26/2023,Yes,Flu (influenza),,,,No,Poor,10-12,,No,70-79
+0013d00000DxfQNAAZ,01/25/2024,16:07:39,04/24/2024,16:59:00,Yes,40,English,COVID-19 Vaccination,1,127,First,1706216815738,Yes,,Moderna,09/20/2023,Yes,Flu (influenza),,,,No,Poor,10-12,,No,70-79
+0013d00000DxgqgAAB,01/25/2024,15:35:52,,,No,56,English,COVID-19 Vaccination,1,118,First,1706214893862,Yes,,Moderna,10/27/2023,Yes,RSV,,GlaxoSmithKline (Arexvy),,No,Very good,1,,No,60-69
+0013d00000DxgqgAAB,01/25/2024,15:35:52,02/16/2024,12:08:00,Yes,56,English,COVID-19 Vaccination,1,118,First,1706214893862,Yes,,Moderna,09/29/2023,Yes,RSV,,GlaxoSmithKline (Arexvy),,No,Very good,1,,No,60-69
+0013d00000DyDEwAAN,10/22/2024,15:56:53,,,No,505,English,COVID-19 Vaccination (Subsequent Dose),19,4,Second,1729629522761,,,Pfizer-BioNTech,10/18/2024,Yes,Flu (influenza):Other,GlaxoSmithKline (Fluarix),,Hepatitis A:Hepatitis B,No,Good,6-7,,No,60-69
+0013d00000DyDzAAAV,11/06/2024,23:09:57,,,No,28,English,COVID-19 Vaccination,7,1,First,1730856224214,Yes,,Moderna,11/05/2024,No,,,,,No,Good,4-5,,No,60-69
+0013d00000DzwPOAAZ,10/22/2024,15:18:21,,,No,53,English,COVID-19 Vaccination (Subsequent Dose),19,49,Second,1729635413086,,,Pfizer-BioNTech,10/07/2024,Yes,Tetanus (Tdap or Td),,,,No,Good,2-3,,No,70-79
+0013d00000DzxDfAAJ,01/26/2024,12:59:49,03/01/2024,16:23:30,Yes,880,English,COVID-19 Vaccination,1,114,First,1706291108636,Yes,,Pfizer-BioNTech,10/04/2023,Yes,Flu (influenza),,,,Yes,Fair,16 or more,,No,60-69
+0013d00000DzxDfAAJ,01/26/2024,12:59:49,,,No,880,English,COVID-19 Vaccination,1,114,First,1706291108636,Yes,,Pfizer-BioNTech,09/22/2023,Yes,Flu (influenza),,,,Yes,Fair,16 or more,,No,60-69
+0013d00000E004vAAB,10/23/2024,12:06:41,,,No,45,English,COVID-19 Vaccination,6,1,First,1729693212821,Yes,,Moderna,10/22/2024,Yes,Flu (influenza),Do not know/cannot recall,,,No,Good,2-3,,No,60-69
+0013d00000E0P0oAAF,01/25/2024,15:20:50,,,No,67,English,COVID-19 Vaccination,1,49,First,1706217550860,Yes,,Pfizer-BioNTech,12/07/2023,No,,,,,Yes,Very good,2-3,,No,70-79
+0013d00000E0P0oAAF,04/20/2024,14:28:44,,,No,41,English,COVID-19 Vaccination (Subsequent Dose),15,2,Second,1713537644139,,,Pfizer-BioNTech,04/18/2024,No,,,,,Yes,Very good,2-3,,No,70-79
+0013d00000E0SjuAAF,03/14/2024,12:19:55,,,No,36,English,COVID-19 Vaccination,3,-219,First,1710443958485,Yes,,Pfizer-BioNTech,09/11/2023,No,,,,,No,Very good,2-3,,No,60-69
+0013d00000E1HQjAAN,10/23/2024,10:49:16,,,No,235,English,COVID-19 Vaccination,6,29,First,1729628670663,Yes,,Do not know/cannot recall,09/24/2024,Yes,Flu (influenza),Seqirus (Flucelvax),,,No,Good,6-7,,No,80+
+0013d00000EG1BbAAL,04/23/2024,22:15:11,,,No,110,English,COVID-19 Vaccination,4,1,First,1713884577845,Yes,,Do not know/cannot recall,04/22/2024,No,,,,,No,Good,10-12,,No,80+
+0013d00000EG1BbAAL,04/23/2024,22:15:11,,,No,110,English,COVID-19 Vaccination,4,1,First,1713884577845,Yes,,Do not know/cannot recall,04/22/2024,No,,,,,No,Good,10-12,,No,80+
+0013d00000ElqnqAAB,02/01/2024,12:09:53,,,No,109,English,COVID-19 Vaccination (Subsequent Dose) Dependent,13,35,Second,1706215550649,,,Pfizer-BioNTech,12/28/2023,No,,,,,No,Very good,2-3,,No,0.5-04
+0013d00000Emnt9AAB,10/22/2024,13:12:47,,,No,83,English,COVID-19 Vaccination (Subsequent Dose),19,4,Second,1729627872364,,,Pfizer-BioNTech,10/11/2024,Yes,Flu (influenza),Do not know/cannot recall,,,Unknown/prefer not to answer,Good,None,Do not know/cannot recall,No,40-49
+0013d00000F4HuXAAV,01/22/2024,13:14:06,,,No,67,English,COVID-19 Vaccination,1,126,First,1705954378662,Yes,,Moderna,10/17/2023,No,,,,,Yes,Poor,16 or more,,No,70-79
+0013d00000F4HuXAAV,01/22/2024,13:14:06,02/16/2024,11:54:00,Yes,67,English,COVID-19 Vaccination,1,126,First,1705954378662,Yes,,Moderna,09/18/2023,No,,,,,Yes,Poor,16 or more,,No,70-79
+0013d00000F4MRmAAN,10/22/2024,16:22:54,,,No,75,English,COVID-19 Vaccination (Subsequent Dose),19,26,Second,1729627760491,,,Moderna,09/26/2024,Yes,Flu (influenza),Sanofi Pasteur (Fluzone),,,No,Excellent,2-3,,No,80+
+0013d00000F4OA4AAN,11/03/2024,13:24:53,,,No,45,English,COVID-19 Vaccination (Subsequent Dose),20,1,Second,1730613398657,,,Moderna,11/02/2024,No,,,,,No,Good,6-7,,No,70-79
+0013d00000F4U4XAAV,10/22/2024,15:21:16,,,No,83,English,COVID-19 Vaccination,6,25,First,1729631609511,Yes,,Moderna,10/04/2024,Yes,Flu (influenza),Sanofi Pasteur (Fluzone High-Dose),,,No,Excellent,1,,No,70-79
+0013d00000F4ncNAAR,01/24/2024,15:15:04,,,No,38,English,COVID-19 Vaccination (Subsequent Dose),12,35,Second,1706042722553,,,Novavax,12/20/2023,No,,,,,No,Very good,8-9,,No,50-59
+0013d00000F4wFWAAZ,01/23/2024,19:38:18,,,No,64,English,COVID-19 Vaccination,1,111,First,1706056634251,Yes,,Moderna,10/20/2023,No,,,,,No,Good,2-3,,Do not know/cannot recall,70-79
+0013d00000F4wFWAAZ,01/23/2024,19:38:18,02/16/2024,11:51:00,Yes,64,English,COVID-19 Vaccination,1,111,First,1706056634251,Yes,,Moderna,10/04/2023,No,,,,,No,Good,2-3,,Do not know/cannot recall,70-79
+0013d00000F4z52AAB,01/23/2024,15:08:33,,,No,24,English,COVID-19 Vaccination,1,53,First,1706044078492,Yes,,Pfizer-BioNTech,12/01/2023,No,,,,,No,Excellent,1,,No,50-59
+0013d00000F4z52AAB,01/23/2024,15:08:33,03/01/2024,17:21:00,Yes,24,English,COVID-19 Vaccination,1,53,First,1706044078492,Yes,,Moderna,12/01/2023,No,,,,,No,Excellent,1,,No,50-59
+0013d00000F50aAAAR,01/23/2024,16:45:18,02/19/2024,13:58:00,Yes,60,English,COVID-19 Vaccination,1,50,First,1706048249576,Yes,,Pfizer-BioNTech,12/04/2023,Yes,RSV,,Do not know/cannot recall,,No,Excellent,2-3,,No,60-69
+0013d00000F50aAAAR,01/23/2024,16:45:18,,,No,60,English,COVID-19 Vaccination,1,50,First,1706048249576,Yes,,Do not know/cannot recall,01/15/2024,Yes,RSV,,Do not know/cannot recall,,No,Excellent,2-3,,No,60-69
+0013d00000F59y7AAB,10/22/2024,16:04:22,,,No,677,English,COVID-19 Vaccination (Subsequent Dose),19,19,Second,1729626780307,,,Moderna,10/18/2024,Yes,Flu (influenza),GlaxoSmithKline (Fluarix),,,No,Excellent,4-5,,No,60-69
+0013d00000F5UDtAAN,01/24/2024,10:45:47,,,No,69,English,COVID-19 Vaccination,1,25,First,1706121877327,Yes,,Novavax,10/24/2023,No,,,,,Yes,Fair,16 or more,,Yes,60-69
+0013d00000F5UDtAAN,01/24/2024,10:45:47,02/16/2024,11:58:00,Yes,69,English,COVID-19 Vaccination,1,25,First,1706121877327,Yes,,Novavax,12/30/2023,No,,,,,Yes,Fair,16 or more,,Yes,60-69
+0013d00000F5Xd0AAF,01/24/2024,14:28:10,,,No,85,English,COVID-19 Vaccination,1,107,First,1706125630753,Yes,,Moderna,09/15/2023,Yes,Flu (influenza),,,,No,Very good,6-7,,Yes,60-69
+0013d00000F5Xd0AAF,01/24/2024,14:28:10,02/16/2024,12:05:00,Yes,85,English,COVID-19 Vaccination,1,107,First,1706125630753,Yes,,Moderna,10/09/2023,Yes,Flu (influenza),,,,No,Very good,6-7,,Yes,60-69
+0013d00000F5Y7FAAV,02/08/2024,12:15:04,,,No,96,English,COVID-19 Vaccination,2,59,First,1706127128667,Yes,,Do not know/cannot recall,01/11/2024,No,,,,,No,Good,13-15,,No,70-79
+0013d00000F5Y7FAAV,02/08/2024,12:15:04,03/01/2024,16:45:00,Yes,96,English,COVID-19 Vaccination,2,59,First,1706127128667,Yes,,Pfizer-BioNTech,12/11/2023,No,,,,,No,Good,13-15,,No,70-79
+0013d00000F5ZZpAAN,01/24/2024,15:38:39,,,No,63,English,COVID-19 Vaccination,1,106,First,1706128608655,Yes,,Moderna,10/10/2023,Yes,Shingles,,,,No,Good,4-5,,No,50-59
+0013d00000F5ZZpAAN,01/24/2024,15:38:39,03/01/2024,16:49:00,Yes,63,English,COVID-19 Vaccination,1,106,First,1706128608655,Yes,,Pfizer-BioNTech,10/10/2023,Yes,Shingles,,,,No,Good,4-5,,No,50-59
+0013d00000F5cL7AAJ,01/26/2024,8:54:27,,,No,394,English,COVID-19 Vaccination,1,107,First,1706133925141,Yes,,Moderna,01/23/2024,Yes,Flu (influenza),,,,No,Very good,16 or more,,No,70-79
+0013d00000F5cL7AAJ,01/26/2024,8:54:27,03/01/2024,17:03:00,Yes,394,English,COVID-19 Vaccination,1,107,First,1706133925141,Yes,,Moderna,10/11/2023,Yes,Flu (influenza),,,,No,Very good,16 or more,,No,70-79
+0013d00000F5e8nAAB,01/24/2024,17:52:07,,,No,139,English,COVID-19 Vaccination,1,122,First,1706135686729,Yes,,Moderna,09/17/2023,Yes,Flu (influenza),,,,No,Very good,2-3,,No,80+
+0013d00000F5e8nAAB,01/24/2024,17:52:07,02/16/2024,12:00:00,Yes,139,English,COVID-19 Vaccination,1,122,First,1706135686729,Yes,,Moderna,09/24/2023,Yes,Flu (influenza),,,,No,Very good,2-3,,No,80+
+0013d00000F5gOLAAZ,11/20/2024,15:22:15,12/06/2024,10:24:00,Yes,247,English,COVID-19 Vaccination (Subsequent Dose),20,44,Third,1732144681563,,,Novavax,10/07/2024,Yes,Flu (influenza),Do not know/cannot recall,,,No,Good,2-3,,No,40-49
+0013d00000F5hb9AAB,01/24/2024,19:23:45,,,No,26,English,COVID-19 Vaccination,1,25,Second,1706142007721,Yes,,Pfizer-BioNTech,12/30/2023,No,,,,,No,Good,6-7,,No,70-79
+0013d00000F64Y0AAJ,01/31/2024,12:28:39,,,No,46,English,COVID-19 Vaccination,1,35,First,1706204745989,Yes,,Pfizer-BioNTech,12/27/2023,No,,,,,No,Excellent,4-5,,No,40-49
+0013d00000F64Y0AAJ,01/31/2024,12:28:39,02/19/2024,14:07:00,Yes,46,English,COVID-19 Vaccination,1,35,First,1706204745989,Yes,,Moderna,12/27/2023,No,,,,,No,Excellent,4-5,,No,40-49
+0013d00000F6CWCAA3,01/25/2024,14:06:41,,,No,39,English,COVID-19 Vaccination,1,-265,First,1706209561690,Yes,,Moderna,12/11/2023,No,,,,,No,Good,4-5,,No,70-79
+0013d00000F6GUqAAN,02/08/2024,14:49:30,,,No,39,English,COVID-19 Vaccination (Subsequent Dose),13,28,Second,1706216549974,,,Novavax,01/11/2024,No,,,,,No,Excellent,6-7,,No,20-29
+0013d00000F6teFAAR,01/26/2024,14:10:19,,,No,85,English,COVID-19 Vaccination,1,43,First,1706306934038,Yes,,Pfizer-BioNTech,12/27/2023,Yes,RSV,,Pfizer (Abrysvo),,Unknown/prefer not to answer,Excellent,2-3,,No,70-79
+0013d00000F6teFAAR,01/26/2024,14:10:19,03/01/2024,16:38:00,Yes,85,English,COVID-19 Vaccination,1,43,First,1706306934038,Yes,,Pfizer-BioNTech,12/14/2023,Yes,RSV,,Pfizer (Abrysvo),,Unknown/prefer not to answer,Excellent,2-3,,No,70-79
+0013d00000F6ywLAAR,01/26/2024,17:53:47,,,No,56,English,COVID-19 Vaccination,1,49,First,1706319990900,Yes,,Pfizer-BioNTech,01/09/2024,No,,,,,No,Excellent,4-5,,No,60-69
+0013d00000F6ywLAAR,01/26/2024,17:53:47,03/01/2024,16:31:20,Yes,56,English,COVID-19 Vaccination,1,49,First,1706319990900,Yes,,Pfizer-BioNTech,12/08/2023,No,,,,,No,Excellent,4-5,,No,60-69
+0013d00000F9fJ3AAJ,02/22/2024,14:51:14,,,No,82,English,COVID-19 Vaccination,3,21,Second,1706804004725,Yes,,Moderna,02/01/2024,No,,,,,No,Very good,2-3,,No,70-79
+0013d00000FAeEaAAL,10/22/2024,17:39:27,,,No,391,English,COVID-19 Vaccination (Subsequent Dose),19,4,Second,1729629891395,,,Do not know/cannot recall,10/18/2024,Yes,Flu (influenza):Pneumonia:RSV:Tetanus (Tdap or Td),Seqirus (Fluad),Pfizer (Abrysvo),,No,Excellent,6-7,,No,70-79
+0013d00000FEDPGAA5,02/10/2024,10:32:26,,,No,77,English,COVID-19 Vaccination (Subsequent Dose),13,39,Second,1707537239193,,,Pfizer-BioNTech,01/02/2024,No,,,,,No,Poor,8-9,,No,50-59
+0013d00000FQn6OAAT,03/08/2024,1:47:51,,,No,57,English,COVID-19 Vaccination,3,2,First,1709745915529,Yes,,Novavax,03/06/2024,No,,,,,No,Very good,4-5,,No,60-69
+0013d00000FQn6OAAT,03/08/2024,1:47:51,,,No,57,English,COVID-19 Vaccination,3,2,First,1709745915529,Yes,,Novavax,03/06/2024,No,,,,,No,Very good,4-5,,No,60-69
+0013d00000FdHlQAAV,09/10/2024,15:05:09,,,No,148,English,COVID-19 Vaccination (Subsequent Dose),19,0,Second,1725984831824,,,Moderna,09/10/2024,Yes,Flu (influenza),Seqirus (Fluad),,,No,Excellent,2-3,,No,60-69
+0013d00000GOjHZAA1,06/11/2024,16:52:31,,,No,62,English,COVID-19 Vaccination,6,0,First,1718139084918,Yes,,Pfizer-BioNTech,06/11/2024,No,,,,,No,Very good,1,,No,80+
+0013d00000GXECeAAP,06/24/2024,18:12:24,,,No,49,English,COVID-19 Vaccination,6,209,First,1719273577437,Yes,,Moderna,11/23/2023,Yes,Flu (influenza),,,,No,Very good,4-5,,No,70-79
+001eq000000fRCMAA2,08/30/2024,13:51:42,,,No,46,English,COVID-19 Vaccination,6,0,First,1725040252583,Yes,,Do not know/cannot recall,08/30/2024,No,,,,,No,Very good,2-3,,No,70-79
+001eq0000023UwYAAU,09/12/2024,16:58:26,,,No,34,English,COVID-19 Vaccination,6,0,First,1726174667700,Yes,,Moderna,09/12/2024,No,,,,,No,Good,2-3,,No,50-59
+001eq000007s9olAAA,10/25/2024,19:56:24,11/04/2024,11:29:00,Yes,86,English,COVID-19 Vaccination,7,30,First,1729900488690,Yes,,Moderna,09/25/2024,Yes,Flu (influenza),Sanofi Pasteur (Fluzone High-Dose),,,No,Excellent,6-7,,Yes,70-79
+001eq000008mjJCAAY,10/31/2024,1:59:55,,,No,169,English,COVID-19 Vaccination,7,14,First,1730352947353,Yes,,Pfizer-BioNTech,10/17/2024,Yes,Flu (influenza),Sanofi Pasteur (Fluzone),,,No,Very good,2-3,,No,60-69
+001eq00000AUn7BAAT,11/09/2024,18:14:04,,,No,42,English,COVID-19 Vaccination,7,22,First,1731200978711,Yes,,Do not know/cannot recall,11/09/2024,No,,,,,No,Excellent,16 or more,,No,80+
+001eq00000AeERXAA3,11/11/2024,12:40:12,,,No,101,English,COVID-19 Vaccination,7,33,First,1731357231220,Yes,,Pfizer-BioNTech,10/09/2024,Yes,Flu (influenza),Sanofi Pasteur (Fluzone High-Dose),,,No,Very good,2-3,,No,60-69
+001eq00000AeWeYAAV,11/11/2024,15:02:16,,,No,56,English,COVID-19 Vaccination,7,56,First,1731358835477,Yes,,Moderna,11/04/2024,Yes,RSV,,GlaxoSmithKline (Arexvy),,No,Good,2-3,,No,60-69
+001eq00000AnZi3AAF,11/13/2024,12:38:53,,,No,100,English,COVID-19 Vaccination,7,35,First,1731444336966,Yes,,Pfizer-BioNTech,11/09/2024,Yes,Flu (influenza),Do not know/cannot recall,,,No,Good,2-3,,No,50-59
+001eq00000B8Md0AAF,11/15/2024,12:49:58,,,No,56,English,COVID-19 Vaccination Dependent,7,2,First,1731616009649,No,,Do not know/cannot recall,11/13/2024,No,,,,,No,Excellent,4-5,,No,0.5-04
+001eq00000B8uGPAAZ,11/14/2024,15:45:58,11/21/2024,17:09:18,Yes,115,English,COVID-19 Vaccination Dependent,7,1,First,1731616037889,Yes,4 or more,Moderna,11/13/2024,No,,,,,No,Excellent,1,,No,0.5-04
+001eq00000B9q7VAAR,11/14/2024,14:35:38,11/21/2024,17:09:03,Yes,42,English,COVID-19 Vaccination,7,57,First,1731620090942,Yes,,Moderna,09/18/2024,No,,,,,No,Excellent,1,,No,70-79
+001eq00000BAZlQAAX,11/14/2024,19:00:29,11/20/2024,14:03:06,Yes,72,English,COVID-19 Vaccination,7,48,First,1731628731966,Yes,,Moderna,09/27/2024,No,,,,,No,Very good,2-3,,No,70-79
+001eq00000BEoYAAA1,11/15/2024,8:41:37,,,No,385,English,COVID-19 Vaccination,7,42,First,1731681007757,Yes,,Do not know/cannot recall,10/04/2024,Yes,Flu (influenza),Seqirus (Fluad),,,No,Excellent,13-15,,No,70-79
+001eq00000BPpyfAAD,11/16/2024,12:43:59,,,No,56,English,COVID-19 Vaccination,7,72,First,1731782569486,Yes,,Moderna,09/18/2024,No,,,,,No,Very good,2-3,,No,60-69
+001eq00000BrouoAAB,11/19/2024,17:31:04,,,No,83,English,COVID-19 Vaccination,7,0,First,1732058971712,Yes,,Pfizer-BioNTech,11/19/2024,Yes,Flu (influenza),Do not know/cannot recall,,,No,Excellent,2-3,,No,60-69
+001eq00000C0SWsAAN,11/20/2024,13:17:40,12/02/2024,16:13:14,Yes,67,English,COVID-19 Vaccination,7,47,First,1732137388146,Yes,,Pfizer-BioNTech,10/04/2024,No,,,,,No,Good,1,,No,60-69
+001eq00000C2LfoAAF,11/20/2024,20:09:50,12/02/2024,16:13:08,Yes,150,English,COVID-19 Vaccination,7,12,First,1732151212664,Yes,,Novavax,11/08/2024,No,,,,,No,Fair,16 or more,,No,50-59
+001eq00000C8W5SAAV,11/21/2024,12:58:26,12/02/2024,16:13:02,Yes,53,English,COVID-19 Vaccination,7,1,First,1732211810132,Yes,,Pfizer-BioNTech,11/20/2024,No,,,,,No,Excellent,1,,No,70-79
+001eq00000CDdrwAAD,11/21/2024,22:31:51,12/02/2024,16:12:56,Yes,97,English,COVID-19 Vaccination,7,30,First,1732256869632,Yes,,Pfizer-BioNTech,10/22/2024,Yes,Flu (influenza),GlaxoSmithKline (Fluarix),,,No,Very good,2-3,,No,40-49
+001eq00000COX7DAAX,11/23/2024,9:32:51,,,No,50,English,COVID-19 Vaccination,7,29,First,1732372283754,Yes,,Moderna,10/25/2024,No,,,,,No,Very good,2-3,,No,60-69
+001eq00000ET1v7AAD,12/12/2024,22:11:28,,,No,113,English,COVID-19 Vaccination,7,3,First,1733847630730,Yes,,Do not know/cannot recall,12/09/2024,Yes,Flu (influenza),Seqirus (Fluad),,,No,Very good,2-3,,No,70-79
