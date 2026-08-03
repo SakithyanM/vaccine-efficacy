@@ -1,0 +1,22 @@
+---
+title: "Vaccine Efficacy Website"
+format:
+  html:
+    toc: false
+---
+
+## Welcome
+
+This Quarto website is a simple starter for exploring the vaccine efficacy dataset in this workspace.
+
+### What is included
+
+- A home page for the project
+- A data overview page
+- A clean static site layout that can be published with Quarto
+
+### Suggested next steps
+
+1. Add charts and tables from the CSV files.
+2. Summarize enrollment and vaccination trends.
+3. Publish the generated site to GitHub Pages or another static host.

@@ -1,0 +1,15 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.quarto-title-block {
+  margin-bottom: 2rem;
+}
+
+.sidebar {
+  background: #f8f9fa;
+}

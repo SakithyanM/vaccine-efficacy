@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Vaccine Efficacy Dashboard"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: data.qmd
+        text: Data Overview
+  sidebar:
+    style: "docked"
+    contents:
+      - section: "Pages"
+        contents:
+          - index.qmd
+          - data.qmd
+  page-footer:
+    center: "Built with Quarto"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+    css: styles.css

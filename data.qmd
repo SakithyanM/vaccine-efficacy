@@ -1,0 +1,24 @@
+---
+title: "Data Overview"
+---
+
+## Available datasets
+
+The workspace includes several CSV files related to vaccination records and surveys:
+
+- `covid_daily_survey.csv`
+- `covid_dose_history.csv`
+- `covid_enrollment.csv`
+- `covid_vaccination.csv`
+- `covid_vaccination_old_records.csv`
+- `covid_weekly_survey.csv`
+
+## Example analysis ideas
+
+- Compare enrollment counts over time.
+- Review dose history patterns by participant.
+- Connect weekly survey responses to vaccine status.
+
+## Notes
+
+This page is intentionally lightweight so you can extend it into a full dashboard with visual summaries and narrative analysis.
