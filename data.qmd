@@ -13,12 +13,66 @@ The workspace includes several CSV files related to vaccination records and surv
 - `covid_vaccination_old_records.csv`
 - `covid_weekly_survey.csv`
 
-## Example analysis ideas
+## Enrollment and vaccination trends
 
-- Compare enrollment counts over time.
-- Review dose history patterns by participant.
-- Connect weekly survey responses to vaccine status.
+The data shows a sharp spike in enrollment during early 2024 and again toward late 2024, while most records are concentrated in first and second dose activity.
 
-## Notes
+### Enrollment trend chart
 
-This page is intentionally lightweight so you can extend it into a full dashboard with visual summaries and narrative analysis.
+```{python}
+#| label: fig-enrollment-trend
+#| fig-cap: "Monthly enrollment trend"
+import pandas as pd
+import matplotlib.pyplot as plt
+
+enrollment = pd.read_csv("covid_enrollment.csv", low_memory=False)
+enrollment["ENROLLED_DATE"] = pd.to_datetime(enrollment["ENROLLED_DATE"], errors="coerce")
+monthly = enrollment.groupby(enrollment["ENROLLED_DATE"].dt.to_period("M")).size().sort_index()
+
+plt.figure(figsize=(8, 4.5))
+plt.bar(monthly.index.astype(str), monthly.values, color="#4c78a8")
+plt.title("Monthly enrollment trend")
+plt.xlabel("Month")
+plt.ylabel("Enrollment count")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+```
+
+### Dose distribution chart
+
+```{python}
+#| label: fig-dose-distribution
+#| fig-cap: "Distribution of vaccination dose numbers"
+import pandas as pd
+import matplotlib.pyplot as plt
+
+vaccination = pd.read_csv("covid_vaccination.csv", low_memory=False)
+dose_counts = vaccination["DOSE_NUMBER"].value_counts().sort_index()
+
+plt.figure(figsize=(7, 4.5))
+plt.bar(dose_counts.index.astype(str), dose_counts.values, color="#5a9e6f")
+plt.title("Dose number distribution")
+plt.xlabel("Dose number")
+plt.ylabel("Record count")
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()
+```
+
+### Summary table
+
+| Metric | Value |
+| --- | ---: |
+| Enrollment records | 91,379 |
+| Vaccination records | 91,216 |
+| Daily survey responses | 139,421 |
+| Weekly survey responses | 220,416 |
+| Most common manufacturer | Pfizer-BioNTech |
+| Most common dose | First |
+
+### Interpretation
+
+- Enrollment activity is seasonally uneven, but the dataset is dominated by a small number of intense reporting periods.
+- First-dose records account for most vaccination entries, suggesting a large share of the sample is still captured at the initial dose stage.
+- The summary table gives a concise snapshot that can be expanded with more participant-level drilldowns later.

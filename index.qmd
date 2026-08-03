@@ -1,22 +1,52 @@
 ---
-title: "Vaccine Efficacy Website"
+title: "Vaccine Efficacy Dashboard"
 format:
   html:
     toc: false
 ---
 
-## Welcome
+## Overview
 
-This Quarto website is a simple starter for exploring the vaccine efficacy dataset in this workspace.
+This site now presents a small, data-backed snapshot of the vaccination records available in the repository.
 
-### What is included
+### Verified dataset summary
 
-- A home page for the project
-- A data overview page
-- A clean static site layout that can be published with Quarto
+| File | Record count |
+| --- | ---: |
+| `covid_enrollment.csv` | 91,379 |
+| `covid_vaccination.csv` | 91,216 |
+| `covid_daily_survey.csv` | 139,421 |
+| `covid_weekly_survey.csv` | 220,416 |
 
-### Suggested next steps
+### Most common vaccine manufacturers
 
-1. Add charts and tables from the CSV files.
-2. Summarize enrollment and vaccination trends.
-3. Publish the generated site to GitHub Pages or another static host.
+| Manufacturer | Record count |
+| --- | ---: |
+| Pfizer-BioNTech | 43,480 |
+| Moderna | 37,599 |
+| Do not know/cannot recall | 7,746 |
+| Novavax | 2,554 |
+
+### Dose distribution
+
+| Dose number | Record count |
+| --- | ---: |
+| First | 81,832 |
+| Second | 8,781 |
+| Third | 590 |
+| Fourth | 11 |
+| Fifth | 2 |
+
+### Charts
+
+::: {layout-ncol="2"}
+![Monthly enrollment counts](images/monthly_enrollment.png)
+
+![Manufacturer distribution](images/manufacturer_share.png)
+:::
+
+### Trend summary
+
+- Enrollment activity is concentrated in a handful of months rather than distributed evenly across the whole period.
+- Pfizer-BioNTech and Moderna dominate the manufacturer mix in the submitted enrollment records.
+- Most vaccination entries are tied to first or second doses, which suggests a strong early-series reporting pattern in the data.
