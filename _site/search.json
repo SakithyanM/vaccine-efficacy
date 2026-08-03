@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Vaccine Efficacy Dashboard",
+    "section": "",
+    "text": "This site now presents a small, data-backed snapshot of the vaccination records available in the repository.\n\n\n\n\n\nFile\nRecord count\n\n\n\n\ncovid_enrollment.csv\n91,379\n\n\ncovid_vaccination.csv\n91,216\n\n\ncovid_daily_survey.csv\n139,421\n\n\ncovid_weekly_survey.csv\n220,416\n\n\n\n\n\n\n\n\n\nManufacturer\nRecord count\n\n\n\n\nPfizer-BioNTech\n43,480\n\n\nModerna\n37,599\n\n\nDo not know/cannot recall\n7,746\n\n\nNovavax\n2,554\n\n\n\n\n\n\n\n\n\nDose number\nRecord count\n\n\n\n\nFirst\n81,832\n\n\nSecond\n8,781\n\n\nThird\n590\n\n\nFourth\n11\n\n\nFifth\n2\n\n\n\n\n\n\n\n\n\n\n\n\nMonthly enrollment counts\n\n\n\n\n\n\n\nManufacturer distribution\n\n\n\n\n\n\n\n\n\nEnrollment activity is concentrated in a handful of months rather than distributed evenly across the whole period.\nPfizer-BioNTech and Moderna dominate the manufacturer mix in the submitted enrollment records.\nMost vaccination entries are tied to first or second doses, which suggests a strong early-series reporting pattern in the data.",
+    "crumbs": [
+      "Home",
+      "Pages",
+      "Vaccine Efficacy Dashboard"
+    ]
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Vaccine Efficacy Dashboard",
+    "section": "",
+    "text": "This site now presents a small, data-backed snapshot of the vaccination records available in the repository.\n\n\n\n\n\nFile\nRecord count\n\n\n\n\ncovid_enrollment.csv\n91,379\n\n\ncovid_vaccination.csv\n91,216\n\n\ncovid_daily_survey.csv\n139,421\n\n\ncovid_weekly_survey.csv\n220,416\n\n\n\n\n\n\n\n\n\nManufacturer\nRecord count\n\n\n\n\nPfizer-BioNTech\n43,480\n\n\nModerna\n37,599\n\n\nDo not know/cannot recall\n7,746\n\n\nNovavax\n2,554\n\n\n\n\n\n\n\n\n\nDose number\nRecord count\n\n\n\n\nFirst\n81,832\n\n\nSecond\n8,781\n\n\nThird\n590\n\n\nFourth\n11\n\n\nFifth\n2\n\n\n\n\n\n\n\n\n\n\n\n\nMonthly enrollment counts\n\n\n\n\n\n\n\nManufacturer distribution\n\n\n\n\n\n\n\n\n\nEnrollment activity is concentrated in a handful of months rather than distributed evenly across the whole period.\nPfizer-BioNTech and Moderna dominate the manufacturer mix in the submitted enrollment records.\nMost vaccination entries are tied to first or second doses, which suggests a strong early-series reporting pattern in the data.",
+    "crumbs": [
+      "Home",
+      "Pages",
+      "Vaccine Efficacy Dashboard"
+    ]
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data Overview",
+    "section": "",
+    "text": "The workspace includes several CSV files related to vaccination records and surveys:\n\ncovid_daily_survey.csv\ncovid_dose_history.csv\ncovid_enrollment.csv\ncovid_vaccination.csv\ncovid_vaccination_old_records.csv\ncovid_weekly_survey.csv",
+    "crumbs": [
+      "Home",
+      "Pages",
+      "Data Overview"
+    ]
+  },
+  {
+    "objectID": "data.html#available-datasets",
+    "href": "data.html#available-datasets",
+    "title": "Data Overview",
+    "section": "",
+    "text": "The workspace includes several CSV files related to vaccination records and surveys:\n\ncovid_daily_survey.csv\ncovid_dose_history.csv\ncovid_enrollment.csv\ncovid_vaccination.csv\ncovid_vaccination_old_records.csv\ncovid_weekly_survey.csv",
+    "crumbs": [
+      "Home",
+      "Pages",
+      "Data Overview"
+    ]
+  },
+  {
+    "objectID": "data.html#enrollment-and-vaccination-trends",
+    "href": "data.html#enrollment-and-vaccination-trends",
+    "title": "Data Overview",
+    "section": "Enrollment and vaccination trends",
+    "text": "Enrollment and vaccination trends\nThe data shows a sharp spike in enrollment during early 2024 and again toward late 2024, while most records are concentrated in first and second dose activity.\n\nEnrollment trend chart\n\n\n\nMonthly enrollment trend\n\n\n\n\nDose distribution chart\n\n\n\nDose number distribution\n\n\n\n\nSummary table\n\n\n\nMetric\nValue\n\n\n\n\nEnrollment records\n91,379\n\n\nVaccination records\n91,216\n\n\nDaily survey responses\n139,421\n\n\nWeekly survey responses\n220,416\n\n\nMost common manufacturer\nPfizer-BioNTech\n\n\nMost common dose\nFirst\n\n\n\n\n\nInterpretation\n\nEnrollment activity is seasonally uneven, but the dataset is dominated by a small number of intense reporting periods.\nFirst-dose records account for most vaccination entries, suggesting a large share of the sample is still captured at the initial dose stage.\nThe summary table gives a concise snapshot that can be expanded with more participant-level drilldowns later.",
+    "crumbs": [
+      "Home",
+      "Pages",
+      "Data Overview"
+    ]
+  },
+  {
+    "objectID": "graphs.html",
+    "href": "graphs.html",
+    "title": "Graphs",
+    "section": "",
+    "text": "This graph shows a simple efficacy proxy, estimated from the share of participants reporting no symptoms in the daily survey after vaccination, grouped by age band.\n\n\n\\[\nE(age) = 100 \\times P(\\text{symptom-free} \\mid age)\n\\]\n\n\n\nAge-based vaccine efficacy proxy\n\n\n\n\n\n\nThe chart uses a symptom-free rate proxy as a practical estimate of vaccine efficacy by age group.\nLower symptom-free shares in younger adult groups suggest a weaker protective signal in this simplified proxy.\nThe graph is intended as a starting point for further age-stratified analysis.",
+    "crumbs": [
+      "Home",
+      "Pages",
+      "Graphs"
+    ]
+  },
+  {
+    "objectID": "graphs.html#age-based-vaccine-efficacy",
+    "href": "graphs.html#age-based-vaccine-efficacy",
+    "title": "Graphs",
+    "section": "",
+    "text": "This graph shows a simple efficacy proxy, estimated from the share of participants reporting no symptoms in the daily survey after vaccination, grouped by age band.\n\n\n\\[\nE(age) = 100 \\times P(\\text{symptom-free} \\mid age)\n\\]\n\n\n\nAge-based vaccine efficacy proxy\n\n\n\n\n\n\nThe chart uses a symptom-free rate proxy as a practical estimate of vaccine efficacy by age group.\nLower symptom-free shares in younger adult groups suggest a weaker protective signal in this simplified proxy.\nThe graph is intended as a starting point for further age-stratified analysis.",
+    "crumbs": [
+      "Home",
+      "Pages",
+      "Graphs"
+    ]
+  }
+]
