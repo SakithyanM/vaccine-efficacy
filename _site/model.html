@@ -107,6 +107,14 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./model.html"> 
 <span class="menu-text">Model</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sources.html"> 
+<span class="menu-text">Sources</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -155,6 +163,18 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./model.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sources</span></a>
   </div>
 </li>
       </ul>
@@ -220,6 +240,7 @@ Table&nbsp;1: Summary of model coefficients
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">term</th>
 <th data-quarto-table-cell-role="th">estimate</th>
 <th data-quarto-table-cell-role="th">std.error</th>
 <th data-quarto-table-cell-role="th">statistic</th>
@@ -230,7 +251,8 @@ Table&nbsp;1: Summary of model coefficients
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">const</th>
+<th data-quarto-table-cell-role="th">0</th>
+<td>const</td>
 <td>1.8192</td>
 <td>0.7649</td>
 <td>2.3784</td>
@@ -239,7 +261,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>3.3183</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">age_at_vax_yrs_05-11</th>
+<th data-quarto-table-cell-role="th">1</th>
+<td>age_at_vax_yrs_05-11</td>
 <td>-1.3420</td>
 <td>1.0847</td>
 <td>-1.2372</td>
@@ -248,7 +271,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>0.7839</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">age_at_vax_yrs_12-19</th>
+<th data-quarto-table-cell-role="th">2</th>
+<td>age_at_vax_yrs_12-19</td>
 <td>-0.5798</td>
 <td>1.0172</td>
 <td>-0.5700</td>
@@ -257,7 +281,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>1.4138</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">age_at_vax_yrs_20-29</th>
+<th data-quarto-table-cell-role="th">3</th>
+<td>age_at_vax_yrs_20-29</td>
 <td>-1.1652</td>
 <td>0.7977</td>
 <td>-1.4607</td>
@@ -266,7 +291,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>0.3983</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">age_at_vax_yrs_30-39</th>
+<th data-quarto-table-cell-role="th">4</th>
+<td>age_at_vax_yrs_30-39</td>
 <td>-0.7149</td>
 <td>0.7784</td>
 <td>-0.9185</td>
@@ -275,7 +301,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>0.8107</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">age_at_vax_yrs_40-49</th>
+<th data-quarto-table-cell-role="th">5</th>
+<td>age_at_vax_yrs_40-49</td>
 <td>-0.7120</td>
 <td>0.7749</td>
 <td>-0.9189</td>
@@ -284,7 +311,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>0.8067</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">age_at_vax_yrs_50-59</th>
+<th data-quarto-table-cell-role="th">6</th>
+<td>age_at_vax_yrs_50-59</td>
 <td>-0.4677</td>
 <td>0.7724</td>
 <td>-0.6055</td>
@@ -293,7 +321,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>1.0462</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">age_at_vax_yrs_60-69</th>
+<th data-quarto-table-cell-role="th">7</th>
+<td>age_at_vax_yrs_60-69</td>
 <td>-0.4510</td>
 <td>0.7688</td>
 <td>-0.5867</td>
@@ -302,7 +331,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>1.0559</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">age_at_vax_yrs_70-79</th>
+<th data-quarto-table-cell-role="th">8</th>
+<td>age_at_vax_yrs_70-79</td>
 <td>-0.1778</td>
 <td>0.7691</td>
 <td>-0.2312</td>
@@ -311,7 +341,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>1.3296</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">age_at_vax_yrs_80+</th>
+<th data-quarto-table-cell-role="th">9</th>
+<td>age_at_vax_yrs_80+</td>
 <td>0.3431</td>
 <td>0.7935</td>
 <td>0.4323</td>
@@ -320,7 +351,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>1.8982</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">DOSE_NUMBER_Fourth</th>
+<th data-quarto-table-cell-role="th">10</th>
+<td>DOSE_NUMBER_Fourth</td>
 <td>17.4465</td>
 <td>11149.4482</td>
 <td>0.0016</td>
@@ -329,7 +361,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>21869.9634</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">DOSE_NUMBER_Second</th>
+<th data-quarto-table-cell-role="th">11</th>
+<td>DOSE_NUMBER_Second</td>
 <td>0.0469</td>
 <td>0.0860</td>
 <td>0.5450</td>
@@ -338,7 +371,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>0.2154</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">DOSE_NUMBER_Third</th>
+<th data-quarto-table-cell-role="th">12</th>
+<td>DOSE_NUMBER_Third</td>
 <td>-0.1937</td>
 <td>0.2339</td>
 <td>-0.8282</td>
@@ -347,7 +381,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>0.2647</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">CURRENT_STATE_Fair</th>
+<th data-quarto-table-cell-role="th">13</th>
+<td>CURRENT_STATE_Fair</td>
 <td>-0.8850</td>
 <td>0.1476</td>
 <td>-5.9962</td>
@@ -356,7 +391,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>-0.5958</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">CURRENT_STATE_Good</th>
+<th data-quarto-table-cell-role="th">14</th>
+<td>CURRENT_STATE_Good</td>
 <td>-0.6409</td>
 <td>0.0975</td>
 <td>-6.5714</td>
@@ -365,7 +401,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>-0.4497</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">CURRENT_STATE_Poor</th>
+<th data-quarto-table-cell-role="th">15</th>
+<td>CURRENT_STATE_Poor</td>
 <td>-1.6117</td>
 <td>0.3847</td>
 <td>-4.1899</td>
@@ -374,7 +411,8 @@ Table&nbsp;1: Summary of model coefficients
 <td>-0.8578</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">CURRENT_STATE_Very good</th>
+<th data-quarto-table-cell-role="th">16</th>
+<td>CURRENT_STATE_Very good</td>
 <td>-0.4496</td>
 <td>0.0884</td>
 <td>-5.0836</td>

@@ -1,0 +1,5 @@
+---
+title: "About"
+---
+
+Hello, I am Sakith Manimaran from Chennai, India. This project was created as a part of Kane's Data Science Bootcamp. This program looks at Vaccine Efficacy when controlling for variables like age and gender. You can view the project repo at https://github.com/SakithyanM/vaccine-efficacy

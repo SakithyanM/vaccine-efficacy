@@ -12,6 +12,10 @@ website:
         text: Data Overview
       - href: model.qmd
         text: Model
+      - href: about.qmd
+        text: About
+      - href: sources.qmd
+        text: Sources
   sidebar:
     style: "docked"
     contents:
@@ -20,6 +24,8 @@ website:
           - index.qmd
           - data.qmd
           - model.qmd
+          - about.qmd
+          - sources.qmd
   page-footer:
     center: "Built with Quarto"
 
