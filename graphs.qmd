@@ -6,16 +6,6 @@ title: "Graphs"
 
 This section contains a small gallery of charts derived from the vaccination and enrollment CSV files. Each image highlights a major covariate in the dataset.
 
-### Age-based vaccine efficacy
-
-This graph shows a simple efficacy proxy, estimated from the share of participants reporting no symptoms in the daily survey after vaccination, grouped by age band.
-
-$$
-E(age) = 100 \times P(\text{symptom-free} \mid age)
-$$
-
-![Age-based vaccine efficacy proxy](images/age_efficacy.png)
-
 ### Manufacturer distribution
 
 ![Manufacturer distribution](images/covariates/manufacturer.png)
@@ -47,5 +37,4 @@ $$
 ### Notes
 
 - The charts are intended as a lightweight covariate gallery for exploratory analysis.
-- The age-based graph uses a symptom-free rate proxy as a practical estimate of vaccine efficacy by age group.
 - Further work could add trend lines, statistical summaries, or more advanced subgroup comparisons.
