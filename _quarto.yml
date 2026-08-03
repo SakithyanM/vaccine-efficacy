@@ -10,8 +10,8 @@ website:
         text: Home
       - href: data.qmd
         text: Data Overview
-      - href: model.qmd
-        text: Model
+      - href: graphs.qmd
+        text: Graphs
   sidebar:
     style: "docked"
     contents:
@@ -19,7 +19,7 @@ website:
         contents:
           - index.qmd
           - data.qmd
-          - model.qmd
+          - graphs.qmd
   page-footer:
     center: "Built with Quarto"
 
