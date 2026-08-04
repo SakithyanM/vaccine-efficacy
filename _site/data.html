@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Overview – Best Age for A COVID Vaccine</title>
+<title>Data Overview – Vaccine Efficiency by Age</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,7 +26,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -70,6 +70,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -83,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Best Age for A COVID Vaccine</span>
+    <span class="navbar-title">Vaccine Efficiency by Age</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -147,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Best Age for A COVID Vaccine</span></a>
+ <span class="menu-text">Vaccine Efficiency by Age</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -187,6 +190,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#available-datasets" id="toc-available-datasets" class="nav-link active" data-scroll-target="#available-datasets">Available datasets</a></li>
+  <li><a href="#how-the-analysis-data-were-prepared" id="toc-how-the-analysis-data-were-prepared" class="nav-link" data-scroll-target="#how-the-analysis-data-were-prepared">How the analysis data were prepared</a>
+  <ul class="collapse">
+  <li><a href="#cleaning-summary" id="toc-cleaning-summary" class="nav-link" data-scroll-target="#cleaning-summary">Cleaning summary</a></li>
+  </ul></li>
   <li><a href="#enrollment-and-vaccination-trends" id="toc-enrollment-and-vaccination-trends" class="nav-link" data-scroll-target="#enrollment-and-vaccination-trends">Enrollment and vaccination trends</a>
   <ul class="collapse">
   <li><a href="#enrollment-trend-chart" id="toc-enrollment-trend-chart" class="nav-link" data-scroll-target="#enrollment-trend-chart">Enrollment trend chart</a></li>
@@ -230,6 +237,70 @@ ul.task-list li input[type="checkbox"] {
 <li><code>covid_vaccination_old_records.csv</code></li>
 <li><code>covid_weekly_survey.csv</code></li>
 </ul>
+</section>
+<section id="how-the-analysis-data-were-prepared" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-analysis-data-were-prepared">How the analysis data were prepared</h2>
+<p>The website does not analyze the CSV files separately. It first converts the daily survey into a participant-level table and then joins that table to the vaccination records using <code>VSAFE_SYSTEM_ID</code>.</p>
+<ul>
+<li>The daily survey file is cleaned to keep only <code>yes</code>/<code>no</code> symptom responses.</li>
+<li>A participant-level <code>symptom_free</code> variable is created from the daily survey history. It equals 1 only when that participant has no <code>yes</code> symptom responses in the available daily rows.</li>
+<li>The participant-level daily table is joined to <code>covid_vaccination.csv</code> on <code>VSAFE_SYSTEM_ID</code> so age band, dose number, and current health state are available in one analysis table.</li>
+<li>Rows with invalid age values or missing join fields are removed.</li>
+<li>For the main analysis, Fourth and Fifth doses are excluded because they are extremely sparse and would not give stable comparisons.</li>
+<li>Missing key fields are dropped rather than imputed.</li>
+</ul>
+<section id="cleaning-summary" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-summary">Cleaning summary</h3>
+<div class="cell" data-execution_count="1">
+<div id="tbl-cleaning-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-cleaning-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1
+</figcaption>
+<div aria-describedby="tbl-cleaning-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">step</th>
+<th data-quarto-table-cell-role="th">records</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Daily survey rows after dropping missing sympt...</td>
+<td>139421</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Participant-level records created from daily s...</td>
+<td>31630</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Rows after joining vaccination records</td>
+<td>37246</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Final analysis sample after removing invalid a...</td>
+<td>37233</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
 </section>
 <section id="enrollment-and-vaccination-trends" class="level2">
 <h2 class="anchored" data-anchor-id="enrollment-and-vaccination-trends">Enrollment and vaccination trends</h2>

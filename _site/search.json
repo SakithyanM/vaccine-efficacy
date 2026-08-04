@@ -4,7 +4,7 @@
     "href": "model.html",
     "title": "Model",
     "section": "",
-    "text": "This section reports a simple regression-style summary using a symptom-free indicator as the response proxy and a small set of covariates from the vaccination and daily survey data.\n\n\nThe fitted model on this page is a logistic regression of the form\n\\[\n\\log\\left(\\frac{P(\\mathrm{symptom\\_free}=1)}{1 - P(\\mathrm{symptom\\_free}=1)}\\right)\n= \\beta_0 + \\beta_1\\,\\mathrm{AgeGroup} + \\beta_2\\,\\mathrm{DoseNumber} + \\beta_3\\,\\mathrm{CurrentState}.\n\\]\nThis means the model estimates how the log-odds of being symptom-free vary with age group, dose number, and current health state.\n\n\n\n\nTable 1: Summary of model coefficients\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n0\nconst\n1.6932\n0.6351\n2.6660\n0.0077\n0.4484\n2.9380\n\n\n1\nage_at_vax_yrs_05-11\n-0.9047\n0.9504\n-0.9520\n0.3411\n-2.7674\n0.9579\n\n\n2\nage_at_vax_yrs_12-19\n-1.3399\n0.8824\n-1.5185\n0.1289\n-3.0693\n0.3896\n\n\n3\nage_at_vax_yrs_20-29\n-1.2347\n0.6683\n-1.8476\n0.0647\n-2.5444\n0.0751\n\n\n4\nage_at_vax_yrs_30-39\n-0.8224\n0.6476\n-1.2699\n0.2041\n-2.0917\n0.4469\n\n\n5\nage_at_vax_yrs_40-49\n-0.7120\n0.6451\n-1.1036\n0.2698\n-1.9764\n0.5525\n\n\n6\nage_at_vax_yrs_50-59\n-0.5933\n0.6411\n-0.9254\n0.3548\n-1.8499\n0.6633\n\n\n7\nage_at_vax_yrs_60-69\n-0.3293\n0.6373\n-0.5167\n0.6054\n-1.5783\n0.9198\n\n\n8\nage_at_vax_yrs_70-79\n-0.1879\n0.6372\n-0.2949\n0.7681\n-1.4367\n1.0609\n\n\n9\nage_at_vax_yrs_80+\n0.5094\n0.6696\n0.7608\n0.4468\n-0.8030\n1.8218\n\n\n10\nDOSE_NUMBER_Second\n-0.0185\n0.0833\n-0.2224\n0.8240\n-0.1817\n0.1447\n\n\n11\nDOSE_NUMBER_Third\n-0.0306\n0.2468\n-0.1238\n0.9015\n-0.5142\n0.4531\n\n\n12\nCURRENT_STATE_Fair\n-1.0375\n0.1430\n-7.2543\n0.0000\n-1.3178\n-0.7572\n\n\n13\nCURRENT_STATE_Good\n-0.5802\n0.0936\n-6.1980\n0.0000\n-0.7637\n-0.3967\n\n\n14\nCURRENT_STATE_Poor\n-2.3305\n0.4197\n-5.5526\n0.0000\n-3.1531\n-1.5079\n\n\n15\nCURRENT_STATE_Very good\n-0.2482\n0.0849\n-2.9222\n0.0035\n-0.4147\n-0.0817\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe table presents estimated coefficients and uncertainty for a simple covariate-based model.\nThe response variable is a symptom-free indicator, used here as a proxy for short-run vaccine outcomes.\nThese estimates are exploratory and intended to show how the observed dataset could be summarized in a model-oriented format.",
+    "text": "This page fits a logistic regression for the symptom-free outcome after combining the daily survey and vaccination tables at the participant level.\n\nThe daily survey rows are collapsed to one row per participant using VSAFE_SYSTEM_ID.\nsymptom_free is created from the daily survey history and equals 1 only when the participant has no yes symptom responses in the available daily rows.\nThe participant-level daily table is joined to the vaccination table on VSAFE_SYSTEM_ID.\nRows with invalid age values or missing key fields are removed.\nFourth and Fifth dose records are excluded from the modeling sample because they are extremely sparse.\n\nReference categories in the model:\n\nAge band: 0.5-04\nDose number: First\nCurrent health state: Excellent\n\n\n\nThe fitted model uses the form\n\\[\n\\log\\left(\\frac{P(\\mathrm{symptom\\_free}=1)}{1 - P(\\mathrm{symptom\\_free}=1)}\\right)\n= \\beta_0 + \\beta_{\\mathrm{age}} + \\beta_{\\mathrm{dose}} + \\beta_{\\mathrm{health}}.\n\\]\nThis means the model estimates how the log-odds of being symptom-free change with age band, dose number, and current health state.",
     "crumbs": [
       "Home",
       "Pages",
@@ -12,11 +12,35 @@
     ]
   },
   {
-    "objectID": "model.html#model-summary",
-    "href": "model.html#model-summary",
+    "objectID": "model.html#model-setup",
+    "href": "model.html#model-setup",
     "title": "Model",
     "section": "",
-    "text": "This section reports a simple regression-style summary using a symptom-free indicator as the response proxy and a small set of covariates from the vaccination and daily survey data.\n\n\nThe fitted model on this page is a logistic regression of the form\n\\[\n\\log\\left(\\frac{P(\\mathrm{symptom\\_free}=1)}{1 - P(\\mathrm{symptom\\_free}=1)}\\right)\n= \\beta_0 + \\beta_1\\,\\mathrm{AgeGroup} + \\beta_2\\,\\mathrm{DoseNumber} + \\beta_3\\,\\mathrm{CurrentState}.\n\\]\nThis means the model estimates how the log-odds of being symptom-free vary with age group, dose number, and current health state.\n\n\n\n\nTable 1: Summary of model coefficients\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n0\nconst\n1.6932\n0.6351\n2.6660\n0.0077\n0.4484\n2.9380\n\n\n1\nage_at_vax_yrs_05-11\n-0.9047\n0.9504\n-0.9520\n0.3411\n-2.7674\n0.9579\n\n\n2\nage_at_vax_yrs_12-19\n-1.3399\n0.8824\n-1.5185\n0.1289\n-3.0693\n0.3896\n\n\n3\nage_at_vax_yrs_20-29\n-1.2347\n0.6683\n-1.8476\n0.0647\n-2.5444\n0.0751\n\n\n4\nage_at_vax_yrs_30-39\n-0.8224\n0.6476\n-1.2699\n0.2041\n-2.0917\n0.4469\n\n\n5\nage_at_vax_yrs_40-49\n-0.7120\n0.6451\n-1.1036\n0.2698\n-1.9764\n0.5525\n\n\n6\nage_at_vax_yrs_50-59\n-0.5933\n0.6411\n-0.9254\n0.3548\n-1.8499\n0.6633\n\n\n7\nage_at_vax_yrs_60-69\n-0.3293\n0.6373\n-0.5167\n0.6054\n-1.5783\n0.9198\n\n\n8\nage_at_vax_yrs_70-79\n-0.1879\n0.6372\n-0.2949\n0.7681\n-1.4367\n1.0609\n\n\n9\nage_at_vax_yrs_80+\n0.5094\n0.6696\n0.7608\n0.4468\n-0.8030\n1.8218\n\n\n10\nDOSE_NUMBER_Second\n-0.0185\n0.0833\n-0.2224\n0.8240\n-0.1817\n0.1447\n\n\n11\nDOSE_NUMBER_Third\n-0.0306\n0.2468\n-0.1238\n0.9015\n-0.5142\n0.4531\n\n\n12\nCURRENT_STATE_Fair\n-1.0375\n0.1430\n-7.2543\n0.0000\n-1.3178\n-0.7572\n\n\n13\nCURRENT_STATE_Good\n-0.5802\n0.0936\n-6.1980\n0.0000\n-0.7637\n-0.3967\n\n\n14\nCURRENT_STATE_Poor\n-2.3305\n0.4197\n-5.5526\n0.0000\n-3.1531\n-1.5079\n\n\n15\nCURRENT_STATE_Very good\n-0.2482\n0.0849\n-2.9222\n0.0035\n-0.4147\n-0.0817\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe table presents estimated coefficients and uncertainty for a simple covariate-based model.\nThe response variable is a symptom-free indicator, used here as a proxy for short-run vaccine outcomes.\nThese estimates are exploratory and intended to show how the observed dataset could be summarized in a model-oriented format.",
+    "text": "This page fits a logistic regression for the symptom-free outcome after combining the daily survey and vaccination tables at the participant level.\n\nThe daily survey rows are collapsed to one row per participant using VSAFE_SYSTEM_ID.\nsymptom_free is created from the daily survey history and equals 1 only when the participant has no yes symptom responses in the available daily rows.\nThe participant-level daily table is joined to the vaccination table on VSAFE_SYSTEM_ID.\nRows with invalid age values or missing key fields are removed.\nFourth and Fifth dose records are excluded from the modeling sample because they are extremely sparse.\n\nReference categories in the model:\n\nAge band: 0.5-04\nDose number: First\nCurrent health state: Excellent\n\n\n\nThe fitted model uses the form\n\\[\n\\log\\left(\\frac{P(\\mathrm{symptom\\_free}=1)}{1 - P(\\mathrm{symptom\\_free}=1)}\\right)\n= \\beta_0 + \\beta_{\\mathrm{age}} + \\beta_{\\mathrm{dose}} + \\beta_{\\mathrm{health}}.\n\\]\nThis means the model estimates how the log-odds of being symptom-free change with age band, dose number, and current health state.",
+    "crumbs": [
+      "Home",
+      "Pages",
+      "Model"
+    ]
+  },
+  {
+    "objectID": "model.html#model-performance",
+    "href": "model.html#model-performance",
+    "title": "Model",
+    "section": "Model performance",
+    "text": "Model performance\nThe model is only modestly better than a simple majority-class baseline, so it should be treated as a descriptive model rather than a strong predictor.\n\n\n\n\nTable 1: Held-out test performance\n\n\n\n\n\n\n\n\n\n\nmetric\nvalue\n\n\n\n\n0\nTest accuracy\n0.562\n\n\n1\nBaseline accuracy\n0.518\n\n\n2\nMajority-class baseline\nNot symptom-free\n\n\n3\nTest-set symptom-free rate\n0.482\n\n\n4\nTrain-set symptom-free rate\n0.482\n\n\n5\nTest sample size\n9309\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 2: Confusion matrix on the test set\n\n\n\n\n\n\n\n\n\n\nPredicted symptom-free\nPredicted not symptom-free\n\n\n\n\nActual symptom-free\n3408\n1411\n\n\nActual not symptom-free\n2669\n1821",
+    "crumbs": [
+      "Home",
+      "Pages",
+      "Model"
+    ]
+  },
+  {
+    "objectID": "model.html#age-effects",
+    "href": "model.html#age-effects",
+    "title": "Model",
+    "section": "Age effects",
+    "text": "Age effects\nThe table below reports adjusted odds ratios for age bands from the full cleaned analysis set. The reference categories are age band 0.5-04, dose First, and current health state Excellent.\nThe age pattern is uneven rather than monotonic. Confidence intervals overlap for many bands, so the safest conclusion is that the data do not show strong evidence that one age band is clearly best.\n\n\n\n\nTable 3: Adjusted age-band effects from the full model\n\n\n\n\n\n\n\n\n\n\nage_band\nodds_ratio\nci_low\nci_high\np.value\npredicted_symptom_free_pct\n\n\n\n\n0\n0.5-04\n1.000\n1.000\n1.000\nreference\n52.5\n\n\n1\n05-11\n0.677\n0.404\n1.134\n0.1380\n42.8\n\n\n2\n12-19\n0.859\n0.509\n1.449\n0.5695\n48.7\n\n\n3\n20-29\n0.574\n0.389\n0.845\n0.0050\n38.8\n\n\n4\n30-39\n0.789\n0.547\n1.138\n0.2043\n46.6\n\n\n5\n40-49\n0.914\n0.636\n1.313\n0.6268\n50.2\n\n\n6\n50-59\n1.142\n0.797\n1.637\n0.4693\n55.8\n\n\n7\n60-69\n1.227\n0.858\n1.754\n0.2622\n57.5\n\n\n8\n70-79\n1.406\n0.984\n2.010\n0.0616\n60.8\n\n\n9\n80+\n1.858\n1.283\n2.691\n0.0010\n67.2\n\n\n\n\n\n\n\n\n\n\n\nInterpretation\n\nOdds ratios above 1 mean higher odds of being symptom-free than the 0.5-04 reference age band, after adjusting for dose number and current health state.\nThe predicted percentages are adjusted predictions at the reference dose and reference current health state.\nThe model is better than a majority-class baseline, but only by a small margin.\nBecause the age effects are mixed and not consistently significant, this project should not claim that one exact age is best.",
     "crumbs": [
       "Home",
       "Pages",
@@ -26,25 +50,25 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Best Age for A COVID Vaccine",
+    "title": "Vaccine Efficiency by Age",
     "section": "",
-    "text": "This dot plot shows participant-level points across age and current health state. Because the source data stores age in grouped bands, each point is mapped to a representative numeric age in years for plotting.\n\n\n\n\n\n\n\n\nFigure 1: Participant-level points by age (years) and current health state\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing.",
+    "text": "This bar chart shows the observed symptom-free rate for each age band. The source age field only contains grouped age categories, so the chart keeps those categories on the x-axis instead of inventing exact ages.\n\n\n\n\n\n\n\n\nFigure 1: Observed symptom-free rate by age\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing. Because the source data only reports age bands, the chart uses age categories rather than exact ages.",
     "crumbs": [
       "Home",
       "Pages",
-      "Best Age for A COVID Vaccine"
+      "Vaccine Efficiency by Age"
     ]
   },
   {
-    "objectID": "index.html#best-age-by-current-health-state",
-    "href": "index.html#best-age-by-current-health-state",
-    "title": "Best Age for A COVID Vaccine",
+    "objectID": "index.html#vaccine-efficiency-by-age-group",
+    "href": "index.html#vaccine-efficiency-by-age-group",
+    "title": "Vaccine Efficiency by Age",
     "section": "",
-    "text": "This dot plot shows participant-level points across age and current health state. Because the source data stores age in grouped bands, each point is mapped to a representative numeric age in years for plotting.\n\n\n\n\n\n\n\n\nFigure 1: Participant-level points by age (years) and current health state\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing.",
+    "text": "This bar chart shows the observed symptom-free rate for each age band. The source age field only contains grouped age categories, so the chart keeps those categories on the x-axis instead of inventing exact ages.\n\n\n\n\n\n\n\n\nFigure 1: Observed symptom-free rate by age\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing. Because the source data only reports age bands, the chart uses age categories rather than exact ages.",
     "crumbs": [
       "Home",
       "Pages",
-      "Best Age for A COVID Vaccine"
+      "Vaccine Efficiency by Age"
     ]
   },
   {
@@ -86,6 +110,18 @@
     ]
   },
   {
+    "objectID": "data.html#how-the-analysis-data-were-prepared",
+    "href": "data.html#how-the-analysis-data-were-prepared",
+    "title": "Data Overview",
+    "section": "How the analysis data were prepared",
+    "text": "How the analysis data were prepared\nThe website does not analyze the CSV files separately. It first converts the daily survey into a participant-level table and then joins that table to the vaccination records using VSAFE_SYSTEM_ID.\n\nThe daily survey file is cleaned to keep only yes/no symptom responses.\nA participant-level symptom_free variable is created from the daily survey history. It equals 1 only when that participant has no yes symptom responses in the available daily rows.\nThe participant-level daily table is joined to covid_vaccination.csv on VSAFE_SYSTEM_ID so age band, dose number, and current health state are available in one analysis table.\nRows with invalid age values or missing join fields are removed.\nFor the main analysis, Fourth and Fifth doses are excluded because they are extremely sparse and would not give stable comparisons.\nMissing key fields are dropped rather than imputed.\n\n\nCleaning summary\n\n\n\n\nTable 1\n\n\n\n\n\n\n\n\n\n\nstep\nrecords\n\n\n\n\n0\nDaily survey rows after dropping missing sympt...\n139421\n\n\n1\nParticipant-level records created from daily s...\n31630\n\n\n2\nRows after joining vaccination records\n37246\n\n\n3\nFinal analysis sample after removing invalid a...\n37233",
+    "crumbs": [
+      "Home",
+      "Pages",
+      "Data Overview"
+    ]
+  },
+  {
     "objectID": "data.html#enrollment-and-vaccination-trends",
     "href": "data.html#enrollment-and-vaccination-trends",
     "title": "Data Overview",
@@ -102,7 +138,7 @@
     "href": "sources.html",
     "title": "Sources",
     "section": "",
-    "text": "https://catalog.data.gov/dataset/v-safe-covid-19?",
+    "text": "Centers for Disease Control and Prevention (CDC), V-safe COVID-19 Data: https://catalog.data.gov/dataset/v-safe-covid-19?",
     "crumbs": [
       "Home",
       "Pages",
@@ -114,7 +150,19 @@
     "href": "sources.html#data-source",
     "title": "Sources",
     "section": "",
-    "text": "https://catalog.data.gov/dataset/v-safe-covid-19?",
+    "text": "Centers for Disease Control and Prevention (CDC), V-safe COVID-19 Data: https://catalog.data.gov/dataset/v-safe-covid-19?",
+    "crumbs": [
+      "Home",
+      "Pages",
+      "Sources"
+    ]
+  },
+  {
+    "objectID": "sources.html#collection-notes",
+    "href": "sources.html#collection-notes",
+    "title": "Sources",
+    "section": "Collection notes",
+    "text": "Collection notes\nThe V-safe dataset is based on voluntary self-reported survey responses from people who chose to enroll after vaccination. Because participation is optional and the data are self-reported, the sample may not represent every vaccinated person or every vaccine experience.\nThe version used here was published through Data.gov and collected by the CDC’s V-safe program for post-vaccination safety monitoring.",
     "crumbs": [
       "Home",
       "Pages",

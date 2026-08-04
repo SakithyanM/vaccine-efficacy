@@ -4,4 +4,10 @@ title: "Sources"
 
 ## Data source
 
-1. https://catalog.data.gov/dataset/v-safe-covid-19?
+1. Centers for Disease Control and Prevention (CDC), V-safe COVID-19 Data: https://catalog.data.gov/dataset/v-safe-covid-19?
+
+## Collection notes
+
+The V-safe dataset is based on voluntary self-reported survey responses from people who chose to enroll after vaccination. Because participation is optional and the data are self-reported, the sample may not represent every vaccinated person or every vaccine experience.
+
+The version used here was published through Data.gov and collected by the CDC's V-safe program for post-vaccination safety monitoring.

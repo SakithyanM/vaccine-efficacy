@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 website:
-  title: "Best Age for A COVID Vaccine"
+  title: "Vaccine Efficiency by Age"
   navbar:
     left:
       - href: index.qmd

@@ -2,71 +2,212 @@
 title: "Model"
 ---
 
-## Model summary
+## Model setup
 
-This section reports a simple regression-style summary using a symptom-free indicator as the response proxy and a small set of covariates from the vaccination and daily survey data.
+This page fits a logistic regression for the symptom-free outcome after combining the daily survey and vaccination tables at the participant level.
+
+- The daily survey rows are collapsed to one row per participant using `VSAFE_SYSTEM_ID`.
+- `symptom_free` is created from the daily survey history and equals 1 only when the participant has no `yes` symptom responses in the available daily rows.
+- The participant-level daily table is joined to the vaccination table on `VSAFE_SYSTEM_ID`.
+- Rows with invalid age values or missing key fields are removed.
+- Fourth and Fifth dose records are excluded from the modeling sample because they are extremely sparse.
+
+Reference categories in the model:
+
+- Age band: `0.5-04`
+- Dose number: `First`
+- Current health state: `Excellent`
 
 ### Equation
 
-The fitted model on this page is a logistic regression of the form
+The fitted model uses the form
 
 $$
 \log\left(\frac{P(\mathrm{symptom\_free}=1)}{1 - P(\mathrm{symptom\_free}=1)}\right)
-= \beta_0 + \beta_1\,\mathrm{AgeGroup} + \beta_2\,\mathrm{DoseNumber} + \beta_3\,\mathrm{CurrentState}.
+= \beta_0 + \beta_{\mathrm{age}} + \beta_{\mathrm{dose}} + \beta_{\mathrm{health}}.
 $$
 
-This means the model estimates how the log-odds of being symptom-free vary with age group, dose number, and current health state.
+This means the model estimates how the log-odds of being symptom-free change with age band, dose number, and current health state.
 
 ```{python}
-#| label: tbl-model-summary
-#| tbl-cap: "Summary of model coefficients"
+#| label: setup-model
 #| echo: false
 
+import numpy as np
 import pandas as pd
 import statsmodels.api as sm
+from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.model_selection import train_test_split
+
+age_order = ["0.5-04", "05-11", "12-19", "20-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80+"]
+dose_order = ["First", "Second", "Third"]
+state_order = ["Excellent", "Very good", "Good", "Fair", "Poor"]
+reference_age = age_order[0]
+reference_dose = dose_order[0]
+reference_state = state_order[0]
 
 vax = pd.read_csv("covid_vaccination.csv", low_memory=False)
 daily = pd.read_csv("covid_daily_survey.csv", low_memory=False)
 
-merged = daily[["VSAFE_SYSTEM_ID", "HAD_SYMPTOMS"]].merge(
+daily_clean = daily[["VSAFE_SYSTEM_ID", "HAD_SYMPTOMS"]].dropna().copy()
+daily_clean["HAD_SYMPTOMS"] = daily_clean["HAD_SYMPTOMS"].astype(str).str.strip().str.lower()
+daily_clean = daily_clean[daily_clean["HAD_SYMPTOMS"].isin(["yes", "no"])].copy()
+
+participant = daily_clean.groupby("VSAFE_SYSTEM_ID").agg(
+    symptom_free=("HAD_SYMPTOMS", lambda values: int((values == "no").all())),
+    survey_rows=("HAD_SYMPTOMS", "size"),
+).reset_index()
+
+analysis = participant.merge(
     vax[["VSAFE_SYSTEM_ID", "age_at_vax_yrs", "DOSE_NUMBER", "CURRENT_STATE"]],
     on="VSAFE_SYSTEM_ID",
     how="inner",
 )
 
-merged = merged.dropna(subset=["age_at_vax_yrs", "DOSE_NUMBER", "CURRENT_STATE"])
-merged = merged[merged["age_at_vax_yrs"] != "Invalid"].copy()
-merged = merged[merged["DOSE_NUMBER"].isin(["First", "Second", "Third"])].copy()
-merged["symptom_free"] = merged["HAD_SYMPTOMS"].astype(str).str.strip().str.lower().eq("no").astype(int)
-merged["age_at_vax_yrs"] = merged["age_at_vax_yrs"].astype(str)
-merged["DOSE_NUMBER"] = merged["DOSE_NUMBER"].astype(str)
-merged["CURRENT_STATE"] = merged["CURRENT_STATE"].astype(str)
+analysis = analysis.dropna(subset=["age_at_vax_yrs", "DOSE_NUMBER", "CURRENT_STATE"])
+analysis = analysis[analysis["age_at_vax_yrs"] != "Invalid"].copy()
+analysis = analysis[analysis["age_at_vax_yrs"].isin(age_order)].copy()
+analysis = analysis[analysis["DOSE_NUMBER"].isin(dose_order)].copy()
+analysis = analysis[analysis["CURRENT_STATE"].isin(state_order)].copy()
 
-sample = merged.sample(n=5000, random_state=42)
+analysis["age_at_vax_yrs"] = pd.Categorical(analysis["age_at_vax_yrs"], categories=age_order, ordered=True)
+analysis["DOSE_NUMBER"] = pd.Categorical(analysis["DOSE_NUMBER"], categories=dose_order, ordered=True)
+analysis["CURRENT_STATE"] = pd.Categorical(analysis["CURRENT_STATE"], categories=state_order, ordered=True)
 
-X = pd.get_dummies(sample[["age_at_vax_yrs", "DOSE_NUMBER", "CURRENT_STATE"]], drop_first=True)
-X = X.astype(float)
-X = sm.add_constant(X)
-y = sample["symptom_free"]
+design = pd.get_dummies(analysis[["age_at_vax_yrs", "DOSE_NUMBER", "CURRENT_STATE"]], drop_first=True).astype(float)
+outcome = analysis["symptom_free"].astype(int)
 
-model = sm.Logit(y, X).fit(disp=False, maxiter=100)
+X_train, X_test, y_train, y_test = train_test_split(
+    design,
+    outcome,
+    test_size=0.25,
+    random_state=42,
+    stratify=outcome,
+)
 
-summary = pd.DataFrame({
-    "estimate": model.params,
-    "std.error": model.bse,
-    "statistic": model.tvalues,
-    "p.value": model.pvalues,
-})
-ci = model.conf_int()
-summary["conf.low"] = ci[0]
-summary["conf.high"] = ci[1]
-summary = summary.reset_index().rename(columns={"index": "term"})
-summary = summary[["term", "estimate", "std.error", "statistic", "p.value", "conf.low", "conf.high"]].round(4)
-summary
+train_design = sm.add_constant(X_train, has_constant="add").astype(float)
+test_design = sm.add_constant(X_test, has_constant="add").astype(float)
+
+test_model = sm.Logit(y_train.astype(float), train_design).fit(disp=False, maxiter=200)
+test_prob = test_model.predict(test_design)
+test_pred = (test_prob >= 0.5).astype(int)
+
+baseline_class = int(y_train.mean() >= 0.5)
+baseline_pred = np.full(len(y_test), baseline_class)
+baseline_label = "Symptom-free" if baseline_class == 1 else "Not symptom-free"
+
+test_accuracy = accuracy_score(y_test, test_pred)
+baseline_accuracy = accuracy_score(y_test, baseline_pred)
+conf_matrix = confusion_matrix(y_test, test_pred)
+
+full_design = sm.add_constant(design, has_constant="add").astype(float)
+full_model = sm.Logit(outcome.astype(float), full_design).fit(disp=False, maxiter=200)
+full_conf = full_model.conf_int()
+
+performance = pd.DataFrame(
+    {
+        "metric": [
+            "Test accuracy",
+            "Baseline accuracy",
+            "Majority-class baseline",
+            "Test-set symptom-free rate",
+            "Train-set symptom-free rate",
+            "Test sample size",
+        ],
+        "value": [
+            f"{test_accuracy:.3f}",
+            f"{baseline_accuracy:.3f}",
+            baseline_label,
+            f"{y_test.mean():.3f}",
+            f"{y_train.mean():.3f}",
+            len(y_test),
+        ],
+    }
+)
+
+confusion = pd.DataFrame(
+    conf_matrix,
+    index=["Actual symptom-free", "Actual not symptom-free"],
+    columns=["Predicted symptom-free", "Predicted not symptom-free"],
+)
+
+age_rows = []
+for age in age_order:
+    row = pd.Series(0.0, index=full_design.columns)
+    row["const"] = 1.0
+    age_term = f"age_at_vax_yrs_{age}"
+    if age_term in row.index:
+        row[age_term] = 1.0
+
+    predicted_pct = float(full_model.predict(row.to_frame().T)[0] * 100)
+
+    if age == reference_age:
+        odds_ratio = 1.0
+        ci_low = 1.0
+        ci_high = 1.0
+        p_value = np.nan
+    else:
+        odds_ratio = float(np.exp(full_model.params[age_term]))
+        ci_low = float(np.exp(full_conf.loc[age_term, 0]))
+        ci_high = float(np.exp(full_conf.loc[age_term, 1]))
+        p_value = float(full_model.pvalues[age_term])
+
+    age_rows.append(
+        {
+            "age_band": age,
+            "odds_ratio": odds_ratio,
+            "ci_low": ci_low,
+            "ci_high": ci_high,
+            "p.value": p_value,
+            "predicted_symptom_free_pct": predicted_pct,
+        }
+    )
+
+age_effects = pd.DataFrame(age_rows)
+age_effects["odds_ratio"] = age_effects["odds_ratio"].round(3)
+age_effects["ci_low"] = age_effects["ci_low"].round(3)
+age_effects["ci_high"] = age_effects["ci_high"].round(3)
+age_effects["predicted_symptom_free_pct"] = age_effects["predicted_symptom_free_pct"].round(1)
+age_effects["p.value"] = age_effects["p.value"].map(lambda value: "reference" if pd.isna(value) else f"{value:.4f}")
+```
+
+## Model performance
+
+The model is only modestly better than a simple majority-class baseline, so it should be treated as a descriptive model rather than a strong predictor.
+
+```{python}
+#| label: tbl-model-performance
+#| tbl-cap: "Held-out test performance"
+#| echo: false
+
+performance
+```
+
+```{python}
+#| label: tbl-model-confusion
+#| tbl-cap: "Confusion matrix on the test set"
+#| echo: false
+
+confusion
+```
+
+## Age effects
+
+The table below reports adjusted odds ratios for age bands from the full cleaned analysis set. The reference categories are age band `0.5-04`, dose `First`, and current health state `Excellent`.
+
+The age pattern is uneven rather than monotonic. Confidence intervals overlap for many bands, so the safest conclusion is that the data do not show strong evidence that one age band is clearly best.
+
+```{python}
+#| label: tbl-age-effects
+#| tbl-cap: "Adjusted age-band effects from the full model"
+#| echo: false
+
+age_effects
 ```
 
 ### Interpretation
 
-- The table presents estimated coefficients and uncertainty for a simple covariate-based model.
-- The response variable is a symptom-free indicator, used here as a proxy for short-run vaccine outcomes.
-- These estimates are exploratory and intended to show how the observed dataset could be summarized in a model-oriented format.
+- Odds ratios above 1 mean higher odds of being symptom-free than the `0.5-04` reference age band, after adjusting for dose number and current health state.
+- The predicted percentages are adjusted predictions at the reference dose and reference current health state.
+- The model is better than a majority-class baseline, but only by a small margin.
+- Because the age effects are mixed and not consistently significant, this project should not claim that one exact age is best.
