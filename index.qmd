@@ -7,11 +7,11 @@ format:
 
 ## Best age by current health state
 
-This chart compares the symptom-free rate across age groups while stratifying by current health state. Higher values indicate a larger share of participants who reported no symptoms in the daily survey data.
+This chart shows the best observed age group within each current health state. For each health state, the plotted point marks the age band with the highest symptom-free rate in the daily survey data.
 
 ```{python}
 #| label: fig-age-health-state
-#| fig-cap: "Symptom-free rate by age group and current health state"
+#| fig-cap: "Best observed age group by current health state"
 #| echo: false
 
 import pandas as pd
@@ -34,6 +34,18 @@ merged = outcome.merge(
 )
 
 age_order = ["0.5-04", "05-11", "12-19", "20-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80+"]
+age_midpoints = {
+  "0.5-04": 2,
+  "05-11": 8,
+  "12-19": 15.5,
+  "20-29": 24.5,
+  "30-39": 34.5,
+  "40-49": 44.5,
+  "50-59": 54.5,
+  "60-69": 64.5,
+  "70-79": 74.5,
+  "80+": 85,
+}
 state_order = ["Excellent", "Very good", "Good", "Fair", "Poor"]
 
 merged = merged.dropna(subset=["age_at_vax_yrs", "CURRENT_STATE", "DOSE_NUMBER"])
@@ -46,17 +58,31 @@ summary["age_at_vax_yrs"] = pd.Categorical(summary["age_at_vax_yrs"], categories
 summary["CURRENT_STATE"] = pd.Categorical(summary["CURRENT_STATE"], categories=state_order, ordered=True)
 summary = summary.sort_values(["age_at_vax_yrs", "CURRENT_STATE"])
 
-pivot = summary.pivot(index="age_at_vax_yrs", columns="CURRENT_STATE", values="symptom_free").reindex(age_order)
+best = summary.loc[summary.groupby("CURRENT_STATE")["symptom_free"].idxmax()].copy()
+best = best.sort_values("CURRENT_STATE")
+best["age_value"] = best["age_at_vax_yrs"].astype(str).map(age_midpoints)
+best["symptom_free_pct"] = best["symptom_free"] * 100
 
-ax = pivot.mul(100).plot(kind="line", figsize=(12, 6), marker="o", linewidth=2.2)
-ax.set_xlabel("Age group")
-ax.set_ylabel("Symptom-free rate (%)")
-ax.set_title("Observed symptom-free rate by age group and current health state")
-ax.legend(title="Current health state", ncol=3)
-plt.xticks(rotation=45, ha="right")
-plt.ylim(0, 100)
+fig, ax = plt.subplots(figsize=(11, 6))
+ax.plot(best["CURRENT_STATE"].astype(str), best["age_value"], marker="o", linewidth=2.2, color="#2f6f9f")
+for _, row in best.iterrows():
+  ax.annotate(
+    f"{row['age_at_vax_yrs']} ({row['symptom_free_pct']:.1f}%)",
+    (str(row["CURRENT_STATE"]), row["age_value"]),
+    textcoords="offset points",
+    xytext=(0, 8),
+    ha="center",
+    fontsize=9,
+  )
+
+ax.set_xlabel("Current health state")
+ax.set_ylabel("Age (years)")
+ax.set_title("Best observed age group by current health state")
+ax.set_yticks([age_midpoints[label] for label in age_order])
+ax.set_yticklabels(age_order)
+plt.xticks(rotation=20, ha="right")
 plt.tight_layout()
 plt.show()
 ```
 
-The best observed age group is the one with the highest symptom-free rate within a given current health state band. This is an exploratory comparison based on reported symptoms rather than a causal estimate of vaccine timing.
+The label above each point shows the age band selected for that health state and its observed symptom-free rate. This is still an exploratory comparison based on reported symptoms rather than a causal estimate of vaccine timing.

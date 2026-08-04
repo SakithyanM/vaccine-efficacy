@@ -28,7 +28,7 @@
     "href": "index.html",
     "title": "Best Age for A COVID Vaccine",
     "section": "",
-    "text": "This chart compares the symptom-free rate across age groups while stratifying by current health state. Higher values indicate a larger share of participants who reported no symptoms in the daily survey data.\n\n\n\n\n\n\n\n\nFigure 1: Symptom-free rate by age group and current health state\n\n\n\n\n\nThe best observed age group is the one with the highest symptom-free rate within a given current health state band. This is an exploratory comparison based on reported symptoms rather than a causal estimate of vaccine timing.",
+    "text": "This chart shows the best observed age group within each current health state. For each health state, the plotted point marks the age band with the highest symptom-free rate in the daily survey data.\n\n\n\n\n\n\n\n\nFigure 1: Best observed age group by current health state\n\n\n\n\n\nThe label above each point shows the age band selected for that health state and its observed symptom-free rate. This is still an exploratory comparison based on reported symptoms rather than a causal estimate of vaccine timing.",
     "crumbs": [
       "Home",
       "Pages",
@@ -40,7 +40,7 @@
     "href": "index.html#best-age-by-current-health-state",
     "title": "Best Age for A COVID Vaccine",
     "section": "",
-    "text": "This chart compares the symptom-free rate across age groups while stratifying by current health state. Higher values indicate a larger share of participants who reported no symptoms in the daily survey data.\n\n\n\n\n\n\n\n\nFigure 1: Symptom-free rate by age group and current health state\n\n\n\n\n\nThe best observed age group is the one with the highest symptom-free rate within a given current health state band. This is an exploratory comparison based on reported symptoms rather than a causal estimate of vaccine timing.",
+    "text": "This chart shows the best observed age group within each current health state. For each health state, the plotted point marks the age band with the highest symptom-free rate in the daily survey data.\n\n\n\n\n\n\n\n\nFigure 1: Best observed age group by current health state\n\n\n\n\n\nThe label above each point shows the age band selected for that health state and its observed symptom-free rate. This is still an exploratory comparison based on reported symptoms rather than a causal estimate of vaccine timing.",
     "crumbs": [
       "Home",
       "Pages",
