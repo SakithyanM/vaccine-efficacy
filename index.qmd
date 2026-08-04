@@ -48,7 +48,7 @@ summary = summary.sort_values(["age_at_vax_yrs", "CURRENT_STATE"])
 
 pivot = summary.pivot(index="age_at_vax_yrs", columns="CURRENT_STATE", values="symptom_free").reindex(age_order)
 
-ax = pivot.mul(100).plot(kind="bar", figsize=(12, 6), width=0.85)
+ax = pivot.mul(100).plot(kind="line", figsize=(12, 6), marker="o", linewidth=2.2)
 ax.set_xlabel("Age group")
 ax.set_ylabel("Symptom-free rate (%)")
 ax.set_title("Observed symptom-free rate by age group and current health state")
