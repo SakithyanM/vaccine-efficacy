@@ -28,7 +28,7 @@
     "href": "index.html",
     "title": "Best Age for A COVID Vaccine",
     "section": "",
-    "text": "This chart shows the best observed age group within each current health state. For each health state, the plotted point marks the age band with the highest symptom-free rate in the daily survey data.\n\n\n\n\n\n\n\n\nFigure 1: Best observed age group by current health state\n\n\n\n\n\nThe label above each point shows the age band selected for that health state and its observed symptom-free rate. This is still an exploratory comparison based on reported symptoms rather than a causal estimate of vaccine timing.",
+    "text": "This dot plot shows participant-level points across current health states. Each dot is one filtered record from the data (First to Third doses only), so the figure contains the full set of points rather than one summary point per state.\n\n\n\n\n\n\n\n\nFigure 1: Participant-level age points by current health state\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing.",
     "crumbs": [
       "Home",
       "Pages",
@@ -40,7 +40,7 @@
     "href": "index.html#best-age-by-current-health-state",
     "title": "Best Age for A COVID Vaccine",
     "section": "",
-    "text": "This chart shows the best observed age group within each current health state. For each health state, the plotted point marks the age band with the highest symptom-free rate in the daily survey data.\n\n\n\n\n\n\n\n\nFigure 1: Best observed age group by current health state\n\n\n\n\n\nThe label above each point shows the age band selected for that health state and its observed symptom-free rate. This is still an exploratory comparison based on reported symptoms rather than a causal estimate of vaccine timing.",
+    "text": "This dot plot shows participant-level points across current health states. Each dot is one filtered record from the data (First to Third doses only), so the figure contains the full set of points rather than one summary point per state.\n\n\n\n\n\n\n\n\nFigure 1: Participant-level age points by current health state\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing.",
     "crumbs": [
       "Home",
       "Pages",
