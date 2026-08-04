@@ -6,6 +6,17 @@ title: "Model"
 
 This section reports a simple regression-style summary using a symptom-free indicator as the response proxy and a small set of covariates from the vaccination and daily survey data.
 
+### Equation
+
+The fitted model on this page is a logistic regression of the form
+
+$$
+\log\left(\frac{P(\mathrm{symptom\_free}=1)}{1 - P(\mathrm{symptom\_free}=1)}\right)
+= \beta_0 + \beta_1\,\mathrm{AgeGroup} + \beta_2\,\mathrm{DoseNumber} + \beta_3\,\mathrm{CurrentState}.
+$$
+
+This means the model estimates how the log-odds of being symptom-free vary with age group, dose number, and current health state.
+
 ```{python}
 #| label: tbl-model-summary
 #| tbl-cap: "Summary of model coefficients"
