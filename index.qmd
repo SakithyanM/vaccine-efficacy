@@ -7,11 +7,11 @@ format:
 
 ## Best age by current health state
 
-This dot plot shows participant-level points across age groups and current health states. Each dot is one filtered record from the data (First to Third doses only), so the figure contains the full set of points rather than one summary point per state.
+This dot plot shows participant-level points across age and current health state. Because the source data stores age in grouped bands, each point is mapped to a representative numeric age in years for plotting.
 
 ```{python}
 #| label: fig-age-health-state
-#| fig-cap: "Participant-level points by age group and current health state"
+#| fig-cap: "Participant-level points by age (years) and current health state"
 #| echo: false
 
 import pandas as pd
@@ -70,8 +70,7 @@ ax.scatter(merged["age_value"], merged["y_jitter"], s=11, alpha=0.32, color="#2f
 ax.set_xlabel("Age (years)")
 ax.set_ylabel("Current health state")
 ax.set_title("All participant-level points by age and current health state")
-ax.set_xticks([age_midpoints[label] for label in age_order])
-ax.set_xticklabels(age_order)
+ax.set_xticks([0, 10, 20, 30, 40, 50, 60, 70, 80])
 ax.set_yticks(range(len(state_order)))
 ax.set_yticklabels(state_order)
 plt.xticks(rotation=20, ha="right")

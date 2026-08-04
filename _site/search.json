@@ -28,7 +28,7 @@
     "href": "index.html",
     "title": "Best Age for A COVID Vaccine",
     "section": "",
-    "text": "This dot plot shows participant-level points across age groups and current health states. Each dot is one filtered record from the data (First to Third doses only), so the figure contains the full set of points rather than one summary point per state.\n\n\n\n\n\n\n\n\nFigure 1: Participant-level points by age group and current health state\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing.",
+    "text": "This dot plot shows participant-level points across age and current health state. Because the source data stores age in grouped bands, each point is mapped to a representative numeric age in years for plotting.\n\n\n\n\n\n\n\n\nFigure 1: Participant-level points by age (years) and current health state\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing.",
     "crumbs": [
       "Home",
       "Pages",
@@ -40,7 +40,7 @@
     "href": "index.html#best-age-by-current-health-state",
     "title": "Best Age for A COVID Vaccine",
     "section": "",
-    "text": "This dot plot shows participant-level points across age groups and current health states. Each dot is one filtered record from the data (First to Third doses only), so the figure contains the full set of points rather than one summary point per state.\n\n\n\n\n\n\n\n\nFigure 1: Participant-level points by age group and current health state\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing.",
+    "text": "This dot plot shows participant-level points across age and current health state. Because the source data stores age in grouped bands, each point is mapped to a representative numeric age in years for plotting.\n\n\n\n\n\n\n\n\nFigure 1: Participant-level points by age (years) and current health state\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing.",
     "crumbs": [
       "Home",
       "Pages",
