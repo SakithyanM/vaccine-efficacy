@@ -4,4 +4,4 @@ title: "Sources"
 
 ## Data source
 
-1. Centers for Disease Control and Prevention V-safe COVID-19 Data (Best for large-scale modeling)
+1. https://catalog.data.gov/dataset/v-safe-covid-19?
