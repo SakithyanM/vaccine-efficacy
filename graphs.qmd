@@ -2,39 +2,53 @@
 title: "Graphs"
 ---
 
-## Covariate graphs
+## Covariate efficacy effects
 
-This section contains a small gallery of charts derived from the vaccination and enrollment CSV files. Each image highlights a major covariate in the dataset.
+This page shows one efficacy-effect chart per available covariate. The outcome proxy is a symptom-free indicator derived from the daily survey data, and each bar reports the average symptom-free rate within that covariate group.
 
-### Manufacturer distribution
+> Note: the provided CSV files do not contain a usable sex or gender column, so no real sex-based chart can be produced from this dataset without an additional source variable.
 
-![Manufacturer distribution](images/covariates/manufacturer.png)
+### Manufacturer
 
-### Age group distribution
+![Manufacturer](images/effect/manufacturer.png)
 
-![Age group distribution](images/covariates/age_group.png)
+### Age group
 
-### Current health state distribution
+![Age group](images/effect/age_group.png)
 
-![Current health state distribution](images/covariates/current_state.png)
+### Current health state
 
-### Immunocompromised status distribution
+![Current health state](images/effect/current_state.png)
 
-![Immunocompromised status distribution](images/covariates/immunocompromised.png)
+### Immunocompromised status
 
-### Doctors seen distribution
+![Immunocompromised status](images/effect/immunocompromised.png)
 
-![Doctors seen distribution](images/covariates/seen_doctor.png)
+### Doctors seen
 
-### Hospitalization distribution
+![Doctors seen](images/effect/seen_doctor.png)
 
-![Hospitalization distribution](images/covariates/hospitalized.png)
+### Hospitalization
 
-### Dose number distribution
+![Hospitalization](images/effect/hospitalized.png)
 
-![Dose number distribution](images/covariates/dose_number.png)
+### Dose number
+
+![Dose number](images/effect/dose_number.png)
+
+### Co-administered vaccine
+
+![Co-administered vaccine](images/effect/coadministered.png)
+
+### COVID vaccine
+
+![COVID vaccine](images/effect/covid_vaccine.png)
+
+### Language
+
+![Language](images/effect/language.png)
 
 ### Notes
 
-- The charts are intended as a lightweight covariate gallery for exploratory analysis.
-- Further work could add trend lines, statistical summaries, or more advanced subgroup comparisons.
+- These charts are exploratory and use a symptom-free proxy as the efficacy outcome.
+- A true sex covariate would require a sex/gender field in the underlying dataset.

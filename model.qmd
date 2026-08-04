@@ -25,6 +25,7 @@ merged = daily[["VSAFE_SYSTEM_ID", "HAD_SYMPTOMS"]].merge(
 
 merged = merged.dropna(subset=["age_at_vax_yrs", "DOSE_NUMBER", "CURRENT_STATE"])
 merged = merged[merged["age_at_vax_yrs"] != "Invalid"].copy()
+merged = merged[merged["DOSE_NUMBER"].isin(["First", "Second", "Third"])].copy()
 merged["symptom_free"] = merged["HAD_SYMPTOMS"].astype(str).str.strip().str.lower().eq("no").astype(int)
 merged["age_at_vax_yrs"] = merged["age_at_vax_yrs"].astype(str)
 merged["DOSE_NUMBER"] = merged["DOSE_NUMBER"].astype(str)
@@ -48,7 +49,8 @@ summary = pd.DataFrame({
 ci = model.conf_int()
 summary["conf.low"] = ci[0]
 summary["conf.high"] = ci[1]
-summary = summary[["estimate", "std.error", "statistic", "p.value", "conf.low", "conf.high"]].round(4)
+summary = summary.reset_index().rename(columns={"index": "term"})
+summary = summary[["term", "estimate", "std.error", "statistic", "p.value", "conf.low", "conf.high"]].round(4)
 summary
 ```
 

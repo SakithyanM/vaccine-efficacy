@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Graphs – Vaccine Efficacy Dashboard</title>
+<title>Graphs – Best Age for A COVID Vaccine</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Vaccine Efficacy Dashboard</span>
+    <span class="navbar-title">Best Age for A COVID Vaccine</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -147,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Vaccine Efficacy Dashboard</span></a>
+ <span class="menu-text">Best Age for A COVID Vaccine</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -186,15 +186,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#covariate-graphs" id="toc-covariate-graphs" class="nav-link active" data-scroll-target="#covariate-graphs">Covariate graphs</a>
+  <li><a href="#covariate-efficacy-effects" id="toc-covariate-efficacy-effects" class="nav-link active" data-scroll-target="#covariate-efficacy-effects">Covariate efficacy effects</a>
   <ul class="collapse">
-  <li><a href="#manufacturer-distribution" id="toc-manufacturer-distribution" class="nav-link" data-scroll-target="#manufacturer-distribution">Manufacturer distribution</a></li>
-  <li><a href="#age-group-distribution" id="toc-age-group-distribution" class="nav-link" data-scroll-target="#age-group-distribution">Age group distribution</a></li>
-  <li><a href="#current-health-state-distribution" id="toc-current-health-state-distribution" class="nav-link" data-scroll-target="#current-health-state-distribution">Current health state distribution</a></li>
-  <li><a href="#immunocompromised-status-distribution" id="toc-immunocompromised-status-distribution" class="nav-link" data-scroll-target="#immunocompromised-status-distribution">Immunocompromised status distribution</a></li>
-  <li><a href="#doctors-seen-distribution" id="toc-doctors-seen-distribution" class="nav-link" data-scroll-target="#doctors-seen-distribution">Doctors seen distribution</a></li>
-  <li><a href="#hospitalization-distribution" id="toc-hospitalization-distribution" class="nav-link" data-scroll-target="#hospitalization-distribution">Hospitalization distribution</a></li>
-  <li><a href="#dose-number-distribution" id="toc-dose-number-distribution" class="nav-link" data-scroll-target="#dose-number-distribution">Dose number distribution</a></li>
+  <li><a href="#manufacturer" id="toc-manufacturer" class="nav-link" data-scroll-target="#manufacturer">Manufacturer</a></li>
+  <li><a href="#age-group" id="toc-age-group" class="nav-link" data-scroll-target="#age-group">Age group</a></li>
+  <li><a href="#current-health-state" id="toc-current-health-state" class="nav-link" data-scroll-target="#current-health-state">Current health state</a></li>
+  <li><a href="#immunocompromised-status" id="toc-immunocompromised-status" class="nav-link" data-scroll-target="#immunocompromised-status">Immunocompromised status</a></li>
+  <li><a href="#doctors-seen" id="toc-doctors-seen" class="nav-link" data-scroll-target="#doctors-seen">Doctors seen</a></li>
+  <li><a href="#hospitalization" id="toc-hospitalization" class="nav-link" data-scroll-target="#hospitalization">Hospitalization</a></li>
+  <li><a href="#dose-number" id="toc-dose-number" class="nav-link" data-scroll-target="#dose-number">Dose number</a></li>
+  <li><a href="#co-administered-vaccine" id="toc-co-administered-vaccine" class="nav-link" data-scroll-target="#co-administered-vaccine">Co-administered vaccine</a></li>
+  <li><a href="#covid-vaccine" id="toc-covid-vaccine" class="nav-link" data-scroll-target="#covid-vaccine">COVID vaccine</a></li>
+  <li><a href="#language" id="toc-language" class="nav-link" data-scroll-target="#language">Language</a></li>
   <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
   </ul></li>
   </ul>
@@ -222,77 +225,107 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="covariate-graphs" class="level2">
-<h2 class="anchored" data-anchor-id="covariate-graphs">Covariate graphs</h2>
-<p>This section contains a small gallery of charts derived from the vaccination and enrollment CSV files. Each image highlights a major covariate in the dataset.</p>
-<section id="manufacturer-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="manufacturer-distribution">Manufacturer distribution</h3>
+<section id="covariate-efficacy-effects" class="level2">
+<h2 class="anchored" data-anchor-id="covariate-efficacy-effects">Covariate efficacy effects</h2>
+<p>This page shows one efficacy-effect chart per available covariate. The outcome proxy is a symptom-free indicator derived from the daily survey data, and each bar reports the average symptom-free rate within that covariate group.</p>
+<blockquote class="blockquote">
+<p>Note: the provided CSV files do not contain a usable sex or gender column, so no real sex-based chart can be produced from this dataset without an additional source variable.</p>
+</blockquote>
+<section id="manufacturer" class="level3">
+<h3 class="anchored" data-anchor-id="manufacturer">Manufacturer</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/covariates/manufacturer.png" class="img-fluid figure-img"></p>
-<figcaption>Manufacturer distribution</figcaption>
+<p><img src="images/effect/manufacturer.png" class="img-fluid figure-img"></p>
+<figcaption>Manufacturer</figcaption>
 </figure>
 </div>
 </section>
-<section id="age-group-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="age-group-distribution">Age group distribution</h3>
+<section id="age-group" class="level3">
+<h3 class="anchored" data-anchor-id="age-group">Age group</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/covariates/age_group.png" class="img-fluid figure-img"></p>
-<figcaption>Age group distribution</figcaption>
+<p><img src="images/effect/age_group.png" class="img-fluid figure-img"></p>
+<figcaption>Age group</figcaption>
 </figure>
 </div>
 </section>
-<section id="current-health-state-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="current-health-state-distribution">Current health state distribution</h3>
+<section id="current-health-state" class="level3">
+<h3 class="anchored" data-anchor-id="current-health-state">Current health state</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/covariates/current_state.png" class="img-fluid figure-img"></p>
-<figcaption>Current health state distribution</figcaption>
+<p><img src="images/effect/current_state.png" class="img-fluid figure-img"></p>
+<figcaption>Current health state</figcaption>
 </figure>
 </div>
 </section>
-<section id="immunocompromised-status-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="immunocompromised-status-distribution">Immunocompromised status distribution</h3>
+<section id="immunocompromised-status" class="level3">
+<h3 class="anchored" data-anchor-id="immunocompromised-status">Immunocompromised status</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/covariates/immunocompromised.png" class="img-fluid figure-img"></p>
-<figcaption>Immunocompromised status distribution</figcaption>
+<p><img src="images/effect/immunocompromised.png" class="img-fluid figure-img"></p>
+<figcaption>Immunocompromised status</figcaption>
 </figure>
 </div>
 </section>
-<section id="doctors-seen-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="doctors-seen-distribution">Doctors seen distribution</h3>
+<section id="doctors-seen" class="level3">
+<h3 class="anchored" data-anchor-id="doctors-seen">Doctors seen</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/covariates/seen_doctor.png" class="img-fluid figure-img"></p>
-<figcaption>Doctors seen distribution</figcaption>
+<p><img src="images/effect/seen_doctor.png" class="img-fluid figure-img"></p>
+<figcaption>Doctors seen</figcaption>
 </figure>
 </div>
 </section>
-<section id="hospitalization-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="hospitalization-distribution">Hospitalization distribution</h3>
+<section id="hospitalization" class="level3">
+<h3 class="anchored" data-anchor-id="hospitalization">Hospitalization</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/covariates/hospitalized.png" class="img-fluid figure-img"></p>
-<figcaption>Hospitalization distribution</figcaption>
+<p><img src="images/effect/hospitalized.png" class="img-fluid figure-img"></p>
+<figcaption>Hospitalization</figcaption>
 </figure>
 </div>
 </section>
-<section id="dose-number-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="dose-number-distribution">Dose number distribution</h3>
+<section id="dose-number" class="level3">
+<h3 class="anchored" data-anchor-id="dose-number">Dose number</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/covariates/dose_number.png" class="img-fluid figure-img"></p>
-<figcaption>Dose number distribution</figcaption>
+<p><img src="images/effect/dose_number.png" class="img-fluid figure-img"></p>
+<figcaption>Dose number</figcaption>
+</figure>
+</div>
+</section>
+<section id="co-administered-vaccine" class="level3">
+<h3 class="anchored" data-anchor-id="co-administered-vaccine">Co-administered vaccine</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/effect/coadministered.png" class="img-fluid figure-img"></p>
+<figcaption>Co-administered vaccine</figcaption>
+</figure>
+</div>
+</section>
+<section id="covid-vaccine" class="level3">
+<h3 class="anchored" data-anchor-id="covid-vaccine">COVID vaccine</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/effect/covid_vaccine.png" class="img-fluid figure-img"></p>
+<figcaption>COVID vaccine</figcaption>
+</figure>
+</div>
+</section>
+<section id="language" class="level3">
+<h3 class="anchored" data-anchor-id="language">Language</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/effect/language.png" class="img-fluid figure-img"></p>
+<figcaption>Language</figcaption>
 </figure>
 </div>
 </section>
 <section id="notes" class="level3">
 <h3 class="anchored" data-anchor-id="notes">Notes</h3>
 <ul>
-<li>The charts are intended as a lightweight covariate gallery for exploratory analysis.</li>
-<li>Further work could add trend lines, statistical summaries, or more advanced subgroup comparisons.</li>
+<li>These charts are exploratory and use a symptom-free proxy as the efficacy outcome.</li>
+<li>A true sex covariate would require a sex/gender field in the underlying dataset.</li>
 </ul>
 
 
