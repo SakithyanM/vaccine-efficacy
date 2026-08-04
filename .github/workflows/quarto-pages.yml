@@ -27,7 +27,7 @@ jobs:
       - name: Install Python render dependencies
         run: |
           python3 -m pip install --upgrade pip
-          python3 -m pip install jupyter nbformat pandas matplotlib statsmodels
+          python3 -m pip install jupyter nbformat pandas matplotlib statsmodels scikit-learn
 
       - name: Render Quarto site
         run: quarto render
