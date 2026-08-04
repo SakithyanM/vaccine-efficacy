@@ -64,7 +64,7 @@ best["age_value"] = best["age_at_vax_yrs"].astype(str).map(age_midpoints)
 best["symptom_free_pct"] = best["symptom_free"] * 100
 
 fig, ax = plt.subplots(figsize=(11, 6))
-ax.plot(best["CURRENT_STATE"].astype(str), best["age_value"], marker="o", linewidth=2.2, color="#2f6f9f")
+ax.scatter(best["CURRENT_STATE"].astype(str), best["age_value"], s=120, color="#2f6f9f")
 for _, row in best.iterrows():
   ax.annotate(
     f"{row['age_at_vax_yrs']} ({row['symptom_free_pct']:.1f}%)",
