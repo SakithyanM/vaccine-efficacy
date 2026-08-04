@@ -7,11 +7,11 @@ format:
 
 ## Best age by current health state
 
-This dot plot shows participant-level points across current health states. Each dot is one filtered record from the data (First to Third doses only), so the figure contains the full set of points rather than one summary point per state.
+This dot plot shows participant-level points across age groups and current health states. Each dot is one filtered record from the data (First to Third doses only), so the figure contains the full set of points rather than one summary point per state.
 
 ```{python}
 #| label: fig-age-health-state
-#| fig-cap: "Participant-level age points by current health state"
+#| fig-cap: "Participant-level points by age group and current health state"
 #| echo: false
 
 import pandas as pd
@@ -57,23 +57,23 @@ merged = merged[merged["CURRENT_STATE"].isin(state_order)].copy()
 merged["age_value"] = merged["age_at_vax_yrs"].astype(str).map(age_midpoints)
 merged = merged.dropna(subset=["age_value"])
 
-state_to_x = {state: i for i, state in enumerate(state_order)}
-merged["x_value"] = merged["CURRENT_STATE"].map(state_to_x)
+state_to_y = {state: i for i, state in enumerate(state_order)}
+merged["y_value"] = merged["CURRENT_STATE"].map(state_to_y)
 
 # Add small deterministic jitter so overlapping points become visible.
 rng = np.random.default_rng(42)
-merged["x_jitter"] = merged["x_value"] + rng.normal(0, 0.07, size=len(merged))
+merged["y_jitter"] = merged["y_value"] + rng.normal(0, 0.07, size=len(merged))
 
 fig, ax = plt.subplots(figsize=(11, 6))
-ax.scatter(merged["x_jitter"], merged["age_value"], s=11, alpha=0.32, color="#2f6f9f", edgecolors="none")
+ax.scatter(merged["age_value"], merged["y_jitter"], s=11, alpha=0.32, color="#2f6f9f", edgecolors="none")
 
-ax.set_xlabel("Current health state")
-ax.set_ylabel("Age (years)")
-ax.set_title("All participant-level age points by current health state")
-ax.set_xticks(range(len(state_order)))
-ax.set_xticklabels(state_order)
-ax.set_yticks([age_midpoints[label] for label in age_order])
-ax.set_yticklabels(age_order)
+ax.set_xlabel("Age (years)")
+ax.set_ylabel("Current health state")
+ax.set_title("All participant-level points by age and current health state")
+ax.set_xticks([age_midpoints[label] for label in age_order])
+ax.set_xticklabels(age_order)
+ax.set_yticks(range(len(state_order)))
+ax.set_yticklabels(state_order)
 plt.xticks(rotation=20, ha="right")
 plt.tight_layout()
 plt.show()
