@@ -4,9 +4,110 @@ title: "Graphs"
 
 ## Covariate efficacy effects
 
-This page shows one efficacy-effect chart per available covariate. The outcome proxy is a symptom-free indicator derived from the daily survey data, and each bar reports the average symptom-free rate within that covariate group.
+This page shows one efficacy-effect line chart per available covariate. The outcome proxy is a symptom-free indicator derived from the daily survey data, and each point reports the average symptom-free rate within that covariate group.
 
 > Note: the provided CSV files do not contain a usable sex or gender column, so no real sex-based chart can be produced from this dataset without an additional source variable.
+
+```{python}
+#| label: build-effect-charts
+#| echo: false
+
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+output_dir = Path("images/effect")
+output_dir.mkdir(parents=True, exist_ok=True)
+
+age_order = ["0.5-04", "05-11", "12-19", "20-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80+"]
+dose_order = ["First", "Second", "Third", "Fourth", "Fifth"]
+state_order = ["Excellent", "Very good", "Good", "Fair", "Poor"]
+binary_order = ["No", "Yes"]
+
+vax = pd.read_csv("covid_vaccination.csv", low_memory=False)
+daily = pd.read_csv("covid_daily_survey.csv", low_memory=False)
+
+daily_clean = daily[["VSAFE_SYSTEM_ID", "HAD_SYMPTOMS"]].dropna().copy()
+daily_clean["HAD_SYMPTOMS"] = daily_clean["HAD_SYMPTOMS"].astype(str).str.strip().str.lower()
+daily_clean = daily_clean[daily_clean["HAD_SYMPTOMS"].isin(["yes", "no"])].copy()
+
+participant = daily_clean.groupby("VSAFE_SYSTEM_ID").agg(
+	symptom_free=("HAD_SYMPTOMS", lambda values: int((values == "no").all())),
+).reset_index()
+
+analysis = participant.merge(
+	vax[[
+		"VSAFE_SYSTEM_ID",
+		"COVID_VACCINE_HISTORY",
+		"COVID_VACCINE_DOSES",
+		"COVID_VACCINE",
+		"COADMINISTERED",
+		"COADMINISTERED_VACCINE",
+		"IMMUNOCOMPROMISED",
+		"CURRENT_STATE",
+		"SEEN_DOCTOR",
+		"HOSPITALIZED",
+		"age_at_vax_yrs",
+		"DOSE_NUMBER",
+		"LANGUAGE",
+	]],
+	on="VSAFE_SYSTEM_ID",
+	how="inner",
+)
+
+analysis = analysis.dropna(subset=["age_at_vax_yrs", "DOSE_NUMBER", "CURRENT_STATE"])
+analysis = analysis[analysis["age_at_vax_yrs"] != "Invalid"].copy()
+
+def make_summary(column, order=None, top_n=None):
+	frame = analysis[[column, "symptom_free"]].dropna().copy()
+	frame[column] = frame[column].astype(str).str.strip()
+
+	if top_n is not None and frame[column].nunique() > top_n:
+		top_values = frame[column].value_counts().head(top_n).index.tolist()
+		frame[column] = frame[column].where(frame[column].isin(top_values), other="Other")
+		order = top_values + ["Other"]
+
+	if order is not None:
+		frame[column] = pd.Categorical(frame[column], categories=order, ordered=True)
+		summary = frame.groupby(column, observed=True)["symptom_free"].mean().reset_index()
+	else:
+		summary = frame.groupby(column)["symptom_free"].mean().reset_index()
+		summary = summary.sort_values(column)
+
+	summary["symptom_free_pct"] = summary["symptom_free"] * 100
+	return summary
+
+
+def save_line_chart(column, title, filename, order=None, top_n=None):
+	summary = make_summary(column, order=order, top_n=top_n)
+	positions = range(len(summary))
+
+	fig, ax = plt.subplots(figsize=(8, 4.5))
+	ax.plot(positions, summary["symptom_free_pct"], marker="o", linewidth=2.2, color="#215a8e")
+	ax.set_title(title)
+	ax.set_ylabel("Symptom-free rate (%)")
+	ax.set_ylim(0, 100)
+	ax.grid(axis="y", alpha=0.3)
+	ax.set_xticks(list(positions))
+	ax.set_xticklabels(summary[column].astype(str), rotation=35, ha="right")
+	ax.set_xlabel("")
+	fig.tight_layout()
+	fig.savefig(output_dir / filename, dpi=180, bbox_inches="tight")
+	plt.close(fig)
+
+
+save_line_chart("COVID_VACCINE_HISTORY", "COVID vaccine history", "manufacturer.png", order=binary_order)
+save_line_chart("age_at_vax_yrs", "Age group", "age_group.png", order=age_order)
+save_line_chart("CURRENT_STATE", "Current health state", "current_state.png", order=state_order)
+save_line_chart("IMMUNOCOMPROMISED", "Immunocompromised status", "immunocompromised.png", order=["No", "Yes", "Unknown/prefer not to answer"])
+save_line_chart("SEEN_DOCTOR", "Doctors seen", "seen_doctor.png")
+save_line_chart("HOSPITALIZED", "Hospitalization", "hospitalized.png", order=["No", "Do not know/cannot recall", "Yes"])
+save_line_chart("DOSE_NUMBER", "Dose number", "dose_number.png", order=dose_order)
+save_line_chart("COADMINISTERED", "Co-administered vaccine", "coadministered.png", order=binary_order)
+save_line_chart("COVID_VACCINE", "COVID vaccine", "covid_vaccine.png")
+save_line_chart("LANGUAGE", "Language", "language.png")
+```
 
 ### Manufacturer
 
