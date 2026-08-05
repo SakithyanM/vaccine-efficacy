@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 website:
-  title: "Vaccine Efficiency by Age"
+  title: "Post-Vaccination Symptoms by Age"
   navbar:
     left:
       - href: index.qmd

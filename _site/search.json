@@ -28,7 +28,7 @@
     "href": "model.html#model-performance",
     "title": "Model",
     "section": "Model performance",
-    "text": "Model performance\nThe model is only modestly better than a simple majority-class baseline, so it should be treated as a descriptive model rather than a strong predictor.\n\n\n\n\nTable 1: Held-out test performance\n\n\n\n\n\n\n\n\n\n\nmetric\nvalue\n\n\n\n\n0\nTest accuracy\n0.562\n\n\n1\nBaseline accuracy\n0.518\n\n\n2\nMajority-class baseline\nNot symptom-free\n\n\n3\nTest-set symptom-free rate\n0.482\n\n\n4\nTrain-set symptom-free rate\n0.482\n\n\n5\nTest sample size\n9309\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 2: Confusion matrix on the test set\n\n\n\n\n\n\n\n\n\n\nPredicted symptom-free\nPredicted not symptom-free\n\n\n\n\nActual symptom-free\n3408\n1411\n\n\nActual not symptom-free\n2669\n1821",
+    "text": "Model performance\nThe model is only modestly better than a simple majority-class baseline (about 56.2% test accuracy vs 51.8% baseline), so it should be treated as a descriptive model rather than a strong predictor.\n\n\n\n\nTable 1: Held-out test performance\n\n\n\n\n\n\n\n\n\n\nmetric\nvalue\n\n\n\n\n0\nTest accuracy\n0.562\n\n\n1\nBaseline accuracy\n0.518\n\n\n2\nMajority-class baseline\nNot symptom-free\n\n\n3\nTest-set symptom-free rate\n0.482\n\n\n4\nTrain-set symptom-free rate\n0.482\n\n\n5\nTest sample size\n9309\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 2: Confusion matrix on the test set\n\n\n\n\n\n\n\n\n\n\nPredicted symptom-free\nPredicted not symptom-free\n\n\n\n\nActual symptom-free\n3408\n1411\n\n\nActual not symptom-free\n2669\n1821",
     "crumbs": [
       "Home",
       "Pages",
@@ -50,25 +50,25 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Vaccine Efficiency by Age",
+    "title": "Post-Vaccination Symptoms by Age",
     "section": "",
     "text": "This line chart shows the observed symptom-free rate for each age band. The source age field only contains grouped age categories, so the chart keeps those categories on the x-axis instead of inventing exact ages.\n\n\n\n\n\n\n\n\nFigure 1: Observed symptom-free rate by age\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing. Because the source data only reports age bands, the chart uses age categories rather than exact ages.",
     "crumbs": [
       "Home",
       "Pages",
-      "Vaccine Efficiency by Age"
+      "Post-Vaccination Symptoms by Age"
     ]
   },
   {
-    "objectID": "index.html#vaccine-efficiency-by-age-group",
-    "href": "index.html#vaccine-efficiency-by-age-group",
-    "title": "Vaccine Efficiency by Age",
+    "objectID": "index.html#post-vaccination-symptoms-by-age-group",
+    "href": "index.html#post-vaccination-symptoms-by-age-group",
+    "title": "Post-Vaccination Symptoms by Age",
     "section": "",
     "text": "This line chart shows the observed symptom-free rate for each age band. The source age field only contains grouped age categories, so the chart keeps those categories on the x-axis instead of inventing exact ages.\n\n\n\n\n\n\n\n\nFigure 1: Observed symptom-free rate by age\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing. Because the source data only reports age bands, the chart uses age categories rather than exact ages.",
     "crumbs": [
       "Home",
       "Pages",
-      "Vaccine Efficiency by Age"
+      "Post-Vaccination Symptoms by Age"
     ]
   },
   {

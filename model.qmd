@@ -173,7 +173,7 @@ age_effects["p.value"] = age_effects["p.value"].map(lambda value: "reference" if
 
 ## Model performance
 
-The model is only modestly better than a simple majority-class baseline, so it should be treated as a descriptive model rather than a strong predictor.
+The model is only modestly better than a simple majority-class baseline (about 56.2% test accuracy vs 51.8% baseline), so it should be treated as a descriptive model rather than a strong predictor.
 
 ```{python}
 #| label: tbl-model-performance
