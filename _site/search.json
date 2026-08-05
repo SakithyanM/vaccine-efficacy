@@ -52,7 +52,7 @@
     "href": "index.html",
     "title": "Vaccine Efficiency by Age",
     "section": "",
-    "text": "This bar chart shows the observed symptom-free rate for each age band. The source age field only contains grouped age categories, so the chart keeps those categories on the x-axis instead of inventing exact ages.\n\n\n\n\n\n\n\n\nFigure 1: Observed symptom-free rate by age\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing. Because the source data only reports age bands, the chart uses age categories rather than exact ages.",
+    "text": "This line chart shows the observed symptom-free rate for each age band. The source age field only contains grouped age categories, so the chart keeps those categories on the x-axis instead of inventing exact ages.\n\n\n\n\n\n\n\n\nFigure 1: Observed symptom-free rate by age\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing. Because the source data only reports age bands, the chart uses age categories rather than exact ages.",
     "crumbs": [
       "Home",
       "Pages",
@@ -64,7 +64,7 @@
     "href": "index.html#vaccine-efficiency-by-age-group",
     "title": "Vaccine Efficiency by Age",
     "section": "",
-    "text": "This bar chart shows the observed symptom-free rate for each age band. The source age field only contains grouped age categories, so the chart keeps those categories on the x-axis instead of inventing exact ages.\n\n\n\n\n\n\n\n\nFigure 1: Observed symptom-free rate by age\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing. Because the source data only reports age bands, the chart uses age categories rather than exact ages.",
+    "text": "This line chart shows the observed symptom-free rate for each age band. The source age field only contains grouped age categories, so the chart keeps those categories on the x-axis instead of inventing exact ages.\n\n\n\n\n\n\n\n\nFigure 1: Observed symptom-free rate by age\n\n\n\n\n\nThis is still an exploratory visualization based on reported symptoms rather than a causal estimate of vaccine timing. Because the source data only reports age bands, the chart uses age categories rather than exact ages.",
     "crumbs": [
       "Home",
       "Pages",
